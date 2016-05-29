@@ -2713,8 +2713,6 @@ public class Launcher extends Activity
             intent = shortcut.intent;
             int[] pos = new int[2];
             v.getLocationOnScreen(pos);
-            intent.setSourceBounds(new Rect(pos[0], pos[1],
-                    pos[0] + v.getWidth(), pos[1] + v.getHeight()));
 
         } else if (tag instanceof AppInfo) {
             shortcut = null;

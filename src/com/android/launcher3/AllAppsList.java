@@ -98,7 +98,13 @@ class AllAppsList {
                 user);
 
         for (LauncherActivityInfoCompat info : matches) {
-            add(new AppInfo(context, info, user, mIconCache, null));
+            // add(new AppInfo(context, info, user, mIconCache, null));
+            AppInfo mAppInfo = new AppInfo(context, info, user, mIconCache,
+                    null);
+            if (!LauncherModel.shortcutExists(context,
+                    mAppInfo.title.toString(), mAppInfo.intent, user)) {
+                add(mAppInfo);
+            }
         }
     }
 

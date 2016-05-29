@@ -49,6 +49,9 @@ public class UninstallShortcutReceiver extends BroadcastReceiver {
     }
 
     public void onReceive(Context context, Intent data) {
+        // totopamimi begin 2016年5月29日 下午2:52:53
+        if (true) return;
+        // totopamimi end
         if (!ACTION_UNINSTALL_SHORTCUT.equals(data.getAction())) {
             return;
         }

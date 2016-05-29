@@ -140,6 +140,9 @@ public class InstallShortcutReceiver extends BroadcastReceiver {
     private static boolean mUseInstallQueue = false;
 
     public void onReceive(Context context, Intent data) {
+        // totopamimi begin 2016年5月29日 下午2:53:35
+        if (true) return;
+        // totopamimi end
         if (!ACTION_INSTALL_SHORTCUT.equals(data.getAction())) {
             return;
         }
@@ -327,6 +330,10 @@ public class InstallShortcutReceiver extends BroadcastReceiver {
             Bitmap icon = data.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON);
             Intent.ShortcutIconResource iconResource =
                 data.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE);
+            if (LauncherModel.shortcutExists(mContext, label, launchIntent,
+                    user)) {
+                return null;
+            }
 
             // Only encode the parameters which are supported by the API.
             try {
