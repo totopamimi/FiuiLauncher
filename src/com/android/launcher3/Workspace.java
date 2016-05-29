@@ -4255,6 +4255,9 @@ public class Workspace extends SmoothPagedView
             if (cellLayout != null) {
                 cellLayout.onDropChild(mDragInfo.cell);
             }
+            if (mDragInfo.cell != null) {
+                mDragInfo.cell.setVisibility(VISIBLE);
+            }
         }
         if ((d.cancelled || (beingCalledAfterUninstall && !mUninstallSuccessful))
                 && mDragInfo.cell != null) {
@@ -4431,7 +4434,7 @@ public class Workspace extends SmoothPagedView
 
     @Override
     public boolean supportsFlingToDelete() {
-        return true;
+        return false;
     }
 
     @Override

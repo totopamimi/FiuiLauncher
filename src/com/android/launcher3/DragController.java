@@ -685,6 +685,22 @@ public class DragController {
                 accepted = true;
             }
         }
+        if (dropTarget instanceof InfoDropTarget) {
+            accepted = false;
+        } else if (dropTarget instanceof DeleteDropTarget) {
+            if (mDragObject.dragInfo instanceof ItemInfo) {
+                ItemInfo item = (ItemInfo) mDragObject.dragInfo;
+                if (item.itemType == LauncherSettings.Favorites.ITEM_TYPE_APPLICATION) {
+                    accepted = false;
+                } else if (item.itemType == LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT) {
+                    accepted = true;
+                } else {
+                    accepted = true;
+                }
+            }
+        } else if (dropTarget instanceof Workspace) {
+            // Nothing to do
+        }
         mDragObject.dragSource.onDropCompleted((View) dropTarget, mDragObject, false, accepted);
     }
 

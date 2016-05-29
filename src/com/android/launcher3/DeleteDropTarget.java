@@ -21,6 +21,9 @@ import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -175,6 +178,31 @@ public class DeleteDropTarget extends ButtonDropTarget {
         return false;
     }
 
+    private boolean willAcceptDeleteDrop(Object info) {
+        if (info instanceof ItemInfo) {
+            ItemInfo item = (ItemInfo) info;
+            if (item.itemType == LauncherSettings.Favorites.ITEM_TYPE_APPWIDGET
+                    || item.itemType == LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT) {
+                return true;
+            }
+
+            if (item.itemType == LauncherSettings.Favorites.ITEM_TYPE_APPLICATION
+                    && item instanceof ShortcutInfo) {
+                ShortcutInfo shortcutInfo = (ShortcutInfo) info;
+                PackageManager pm = getContext().getPackageManager();
+                try {
+                    ApplicationInfo ai = pm.getApplicationInfo(shortcutInfo
+                            .getTargetComponent().getPackageName(), 0);
+                    if ((ai.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
+                        return true;
+                    }
+                } catch (NameNotFoundException e) {
+                }
+            }
+        }
+        return false;
+    }
+
     @Override
     public void onDragStart(DragSource source, Object info, int dragAction) {
         boolean isVisible = true;
@@ -185,10 +213,10 @@ public class DeleteDropTarget extends ButtonDropTarget {
         // If we are dragging an application from AppsCustomize, only show the control if we can
         // delete the app (it was downloaded), and rename the string to "uninstall" in such a case.
         // Hide the delete target if it is a widget from AppsCustomize.
-        if (!willAcceptDrop(info) || isAllAppsWidget(source, info)) {
+        if (!willAcceptDeleteDrop(info) || isAllAppsWidget(source, info)) {
             isVisible = false;
         }
-        if (useUninstallLabel) {
+        if (useDeleteLabel) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                 UserManager userManager = (UserManager)
                         getContext().getSystemService(Context.USER_SERVICE);
@@ -294,6 +322,27 @@ public class DeleteDropTarget extends ButtonDropTarget {
         ItemInfo item = (ItemInfo) d.dragInfo;
         boolean wasWaitingForUninstall = mWaitingForUninstall;
         mWaitingForUninstall = false;
+
+        // totopamimi start
+        android.util.Log.i("DeleteDropTarget", "item=" + item.toString());
+        // ShortcutInfo
+        // ApplicationInfo
+        // AppWidget
+        // if item is shortcut, uninstall
+        if (item instanceof ShortcutInfo && !isUninstallFromWorkspace(d)) {
+            ShortcutInfo shortcut = (ShortcutInfo) item;
+            if (shortcut.intent != null
+                    && shortcut.intent.getComponent() != null
+                    && shortcut.user != null) {
+                mWaitingForUninstall = mLauncher
+                        .startApplicationUninstallActivity(
+                                shortcut.intent.getComponent(), shortcut.flags,
+                                shortcut.user);
+            }
+            return;
+        }
+        // totopamimi end
+
         if (isAllAppsApplication(d.dragSource, item)) {
             // Uninstall the application if it is being dragged from AppsCustomize
             AppInfo appInfo = (AppInfo) item;

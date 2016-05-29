@@ -104,8 +104,8 @@ public class InfoDropTarget extends ButtonDropTarget {
     public void onDragStart(DragSource source, Object info, int dragAction) {
         boolean isVisible = true;
 
-        // Hide this button unless we are dragging something from AllApps
-        if (!source.supportsAppInfoDropTarget()) {
+        // Hide this button unless we are dragging something from ShortcutInfo
+        if (!(info instanceof ShortcutInfo)) {
             isVisible = false;
         }
 

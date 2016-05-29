@@ -2899,7 +2899,17 @@ public class Launcher extends Activity
     // returns true if the activity was started
     boolean startApplicationUninstallActivity(ComponentName componentName, int flags,
             UserHandleCompat user) {
-        if ((flags & AppInfo.DOWNLOADED_FLAG) == 0) {
+        boolean systemApp = false;
+        PackageManager pm = getPackageManager();
+        try {
+            ApplicationInfo ai = pm.getApplicationInfo(
+                    componentName.getPackageName(), 0);
+            if ((ai.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+                systemApp = true;
+            }
+        } catch (NameNotFoundException e) {
+        }
+        if (systemApp) {
             // System applications cannot be installed. For now, show a toast explaining that.
             // We may give them the option of disabling apps this way.
             int messageId = R.string.uninstall_system_app_text;
