@@ -8,7 +8,7 @@ public class BuildInfo {
     private static final String TAG = "BuildInfo";
 
     public boolean isDogfoodBuild() {
-        return false;
+        return true;
     }
 
     public static BuildInfo loadByName(String className) {

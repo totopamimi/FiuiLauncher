@@ -3068,6 +3068,7 @@ public class LauncherModel extends BroadcastReceiver
 
             if (added != null) {
                 // Ensure that we add all the workspace applications to the db
+                // Add all applications to workspace
                 if (LauncherAppState.isDisableAllApps()) {
                     final ArrayList<ItemInfo> addedInfos = new ArrayList<ItemInfo>(added);
                     addAndBindAddedWorkspaceApps(context, addedInfos);

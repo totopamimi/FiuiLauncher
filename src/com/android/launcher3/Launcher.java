@@ -3345,7 +3345,7 @@ public class Launcher extends Activity
                 Workspace.State.OVERVIEW_HIDDEN : Workspace.State.NORMAL_HIDDEN;
         Animator workspaceAnim =
                 mWorkspace.getChangeStateAnimation(workspaceState, animated, layerViews);
-        if (!LauncherAppState.isDisableAllApps()
+        if (LauncherAppState.isDisableAllApps()
                 || contentType == AppsCustomizePagedView.ContentType.Widgets) {
             // Set the content type for the all apps/widgets space
             mAppsCustomizeTabHost.setContentTypeImmediate(contentType);
@@ -4599,7 +4599,7 @@ public class Launcher extends Activity
      * Implementation of the method from LauncherModel.Callbacks.
      */
     public void bindAllApplications(final ArrayList<AppInfo> apps) {
-        if (LauncherAppState.isDisableAllApps()) {
+        if (!LauncherAppState.isDisableAllApps()) {
             if (mIntentsOnWorkspaceFromUpgradePath != null) {
                 if (LauncherModel.UPGRADE_USE_MORE_APPS_FOLDER) {
                     getHotseat().addAllAppsFolder(mIconCache, apps,

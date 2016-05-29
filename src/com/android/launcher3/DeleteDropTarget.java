@@ -164,7 +164,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
 
             if (item.itemType == LauncherSettings.Favorites.ITEM_TYPE_APPLICATION &&
                 item instanceof ShortcutInfo) {
-                if (LauncherAppState.isDisableAllApps()) {
+                if (!LauncherAppState.isDisableAllApps()) {
                     ShortcutInfo shortcutInfo = (ShortcutInfo) info;
                     return (shortcutInfo.flags & AppInfo.DOWNLOADED_FLAG) != 0;
                 } else {

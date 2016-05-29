@@ -3156,8 +3156,6 @@ public class Workspace extends SmoothPagedView
                         CellLayout parentCell = getParentCellLayoutForView(cell);
                         if (parentCell != null) {
                             parentCell.removeView(cell);
-                        } else if (LauncherAppState.isDogfoodBuild()) {
-                            throw new NullPointerException("mDragInfo.cell has null parent");
                         }
                         addInScreen(cell, container, screenId, mTargetCell[0], mTargetCell[1],
                                 info.spanX, info.spanY);
@@ -3616,9 +3614,6 @@ public class Workspace extends SmoothPagedView
         CellLayout layout = null;
         ItemInfo item = (ItemInfo) d.dragInfo;
         if (item == null) {
-            if (LauncherAppState.isDogfoodBuild()) {
-                throw new NullPointerException("DragObject has null info");
-            }
             return;
         }
 
@@ -4245,8 +4240,6 @@ public class Workspace extends SmoothPagedView
                 CellLayout parentCell = getParentCellLayoutForView(mDragInfo.cell);
                 if (parentCell != null) {
                     parentCell.removeView(mDragInfo.cell);
-                } else if (LauncherAppState.isDogfoodBuild()) {
-                    throw new NullPointerException("mDragInfo.cell has null parent");
                 }
                 if (mDragInfo.cell instanceof DropTarget) {
                     mDragController.removeDropTarget((DropTarget) mDragInfo.cell);
@@ -4258,10 +4251,6 @@ public class Workspace extends SmoothPagedView
                 cellLayout = mLauncher.getHotseat().getLayout();
             } else {
                 cellLayout = getScreenWithId(mDragInfo.screenId);
-            }
-            if (cellLayout == null && LauncherAppState.isDogfoodBuild()) {
-                throw new RuntimeException("Invalid state: cellLayout == null in "
-                        + "Workspace#onDropCompleted. Please file a bug. ");
             }
             if (cellLayout != null) {
                 cellLayout.onDropChild(mDragInfo.cell);

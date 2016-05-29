@@ -1415,7 +1415,7 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     }
 
     public void setApps(ArrayList<AppInfo> list) {
-        if (!LauncherAppState.isDisableAllApps()) {
+        if (LauncherAppState.isDisableAllApps()) {
             mApps = list;
             Collections.sort(mApps, LauncherModel.getAppNameComparator());
             updatePageCountsAndInvalidateData();
