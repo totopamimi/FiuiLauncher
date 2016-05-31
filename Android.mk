@@ -38,8 +38,11 @@ LOCAL_PROTOC_FLAGS := --proto_path=$(LOCAL_PATH)/protos/
 
 LOCAL_SDK_VERSION := 21
 
-LOCAL_PACKAGE_NAME := Launcher3
+LOCAL_PACKAGE_NAME := FiuiLauncher
+LOCAL_PRIVILEGED_MODULE := true
 #LOCAL_CERTIFICATE := shared
+
+LOCAL_AAPT_FLAGS += --rename-manifest-package org.fiui.launcher
 
 LOCAL_OVERRIDES_PACKAGES := Launcher2
 
