@@ -4006,7 +4006,10 @@ public class Launcher extends Activity
                 mQsb = mAppWidgetHost.createView(this, widgetId, searchProvider);
                 mQsb.updateAppWidgetOptions(opts);
                 mQsb.setPadding(0, 0, 0, 0);
-                mSearchDropTargetBar.addView(mQsb);
+                // totopamimi begin 2016年6月10日 下午2:41:51
+                // Hide the search bar
+                // mSearchDropTargetBar.addView(mQsb);
+                // totopamimi end
             }
         }
         return mQsb;
