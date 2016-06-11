@@ -346,7 +346,7 @@ public class CellLayout extends ViewGroup {
 
         r *= FOREGROUND_ALPHA_DAMPER;
         mForegroundAlpha = (int) Math.round((r * 255));
-        mOverScrollForegroundDrawable.setAlpha(mForegroundAlpha);
+        mOverScrollForegroundDrawable.setAlpha(0);
         invalidate();
     }
 
