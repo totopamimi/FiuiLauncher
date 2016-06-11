@@ -2798,7 +2798,7 @@ public class Launcher extends Activity
         if (mIsSafeModeEnabled) {
             Toast.makeText(this, R.string.safemode_widget_error, Toast.LENGTH_SHORT).show();
         } else {
-            showAllApps(true, AppsCustomizePagedView.ContentType.Widgets, true);
+            showAllApps(false, AppsCustomizePagedView.ContentType.Widgets, true);
             if (mLauncherCallbacks != null) {
                 mLauncherCallbacks.onClickAddWidgetButton(view);
             }
@@ -3852,7 +3852,7 @@ public class Launcher extends Activity
         if (mState != State.WORKSPACE || mWorkspace.getState() != Workspace.State.NORMAL) {
             boolean wasInSpringLoadedMode = (mState != State.WORKSPACE);
             mWorkspace.setVisibility(View.VISIBLE);
-            hideAppsCustomizeHelper(Workspace.State.NORMAL, animated, false, onCompleteRunnable);
+            hideAppsCustomizeHelper(Workspace.State.NORMAL, false, false, onCompleteRunnable);
 
             // Show the search bar (only animate if we were showing the drop target bar in spring
             // loaded mode)
@@ -3921,7 +3921,7 @@ public class Launcher extends Activity
 
     void enterSpringLoadedDragMode() {
         if (isAllAppsVisible()) {
-            hideAppsCustomizeHelper(Workspace.State.SPRING_LOADED, true, true, null);
+            hideAppsCustomizeHelper(Workspace.State.SPRING_LOADED, false, true, null);
             mState = State.APPS_CUSTOMIZE_SPRING_LOADED;
         }
     }
