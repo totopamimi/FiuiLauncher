@@ -1192,6 +1192,16 @@ public class Launcher extends Activity
     }
 
 
+    protected void startSettings() {
+        Intent settings;
+        settings = new Intent(android.provider.Settings.ACTION_SETTINGS);
+        startActivity(settings);
+        /*
+         * if (mWorkspace.isInOverviewMode()) {
+         * mWorkspace.exitOverviewMode(false); }
+         */
+    }
+
     public void addToCustomContentPage(View customContent,
             CustomContentCallbacks callbacks, String description) {
         mWorkspace.addToCustomContentPage(customContent, callbacks, description);
@@ -1397,12 +1407,12 @@ public class Launcher extends Activity
         wallpaperButton.setOnTouchListener(getHapticFeedbackTouchListener());
 
         View settingsButton = findViewById(R.id.settings_button);
-        if (hasSettings()) {
+        if (true) {
             settingsButton.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
                     if (!mWorkspace.isSwitchingState()) {
-                        onClickSettingsButton(arg0);
+                        startSettings();
                     }
                 }
             });
