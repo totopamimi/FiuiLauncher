@@ -8,5 +8,6 @@
     <integer name="ui_hotseat_icons">@integer/ui_homescreen_columns</integer>
     <color name="remove_target_tint">#33ff0000</color>
     <color name="info_target_tint">#330099cc</color>
+    <dimen name="hotseat_padding">12dip</dimen>
 
 </resources>
