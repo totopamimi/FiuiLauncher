@@ -16,14 +16,19 @@
 
 package com.android.launcher3;
 
+import java.util.List;
+
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.ResolveInfo;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -335,15 +340,30 @@ public class DeleteDropTarget extends ButtonDropTarget {
         // if item is shortcut, uninstall
         if (item instanceof ShortcutInfo && !isUninstallFromWorkspace(d)) {
             ShortcutInfo shortcut = (ShortcutInfo) item;
-            if (shortcut.intent != null
-                    && shortcut.intent.getComponent() != null
-                    && shortcut.user != null) {
-                mWaitingForUninstall = mLauncher
-                        .startApplicationUninstallActivity(
-                                shortcut.intent.getComponent(), shortcut.flags,
-                                shortcut.user);
+            if (shortcut.intent != null && shortcut.intent.getComponent() != null) {
+                // PackageInfo pi = pm.getPackageInfo(shortcutPackageName,
+                // PackageManager.GET_ACTIVITIES);
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                String shortcutPackageName = shortcut.intent.getComponent().getPackageName();
+                String shortcutClassName = shortcut.intent.getComponent().getClassName();
+                List<ResolveInfo> apps = mLauncher.getPackageManager().queryIntentActivities(intent, 0);
+                for (ResolveInfo info : apps) {
+                    String infoPackageName = info.activityInfo.packageName;
+                    String infoClassName = info.activityInfo.name;
+                    if (infoPackageName.equals(shortcutPackageName)) {
+                        if (infoClassName.equals(shortcutClassName)) {
+                            mWaitingForUninstall = mLauncher
+                                    .startApplicationUninstallActivity(
+                                            shortcut.intent.getComponent(),
+                                            shortcut.flags, shortcut.user);
+                            return;
+                        } else {
+                            break;
+                        }
+                    }
+                }
             }
-            return;
         }
         // totopamimi end
 
@@ -358,8 +378,33 @@ public class DeleteDropTarget extends ButtonDropTarget {
                 final ComponentName componentName = shortcut.intent.getComponent();
                 final DragSource dragSource = d.dragSource;
                 final UserHandleCompat user = shortcut.user;
-                mWaitingForUninstall = mLauncher.startApplicationUninstallActivity(
-                        componentName, shortcut.flags, user);
+                // mWaitingForUninstall =
+                // mLauncher.startApplicationUninstallActivity(
+                // componentName, shortcut.flags, user);
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                String shortcutPackageName = shortcut.intent.getComponent().getPackageName();
+                String shortcutClassName = shortcut.intent.getComponent().getClassName();
+                List<ResolveInfo> apps = mLauncher.getPackageManager().queryIntentActivities(intent, 0);
+                for (ResolveInfo info : apps) {
+                    String infoPackageName = info.activityInfo.packageName;
+                    String infoClassName = info.activityInfo.name;
+                    if (infoPackageName.equals(shortcutPackageName)) {
+                        if (infoClassName.equals(shortcutClassName)) {
+                            mWaitingForUninstall = mLauncher
+                                    .startApplicationUninstallActivity(
+                                            componentName, shortcut.flags, user);
+                        } else {
+                            mWaitingForUninstall = false;
+                            if (dragSource instanceof Folder) {
+                                ((Folder) dragSource).onUninstallActivityReturned(true);
+                            } else if (dragSource instanceof Workspace) {
+                                ((Workspace) dragSource).onUninstallActivityReturned(true);
+                            }
+                            LauncherModel.deleteItemFromDatabase(mLauncher, item);
+                        }
+                    }
+                }
                 if (mWaitingForUninstall) {
                     final Runnable checkIfUninstallWasSuccess = new Runnable() {
                         @Override

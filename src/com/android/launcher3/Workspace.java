@@ -4256,13 +4256,25 @@ public class Workspace extends SmoothPagedView
                 cellLayout.onDropChild(mDragInfo.cell);
             }
             if (mDragInfo.cell != null) {
-                mDragInfo.cell.setVisibility(VISIBLE);
+                android.util.Log.i("onDropCompleted",
+                        "beingCalledAfterUninstall="
+                                + beingCalledAfterUninstall
+                                + ", mUninstallSuccessful="
+                                + mUninstallSuccessful + ", d.cancelled="
+                                + d.cancelled);
+                if (beingCalledAfterUninstall) {
+                    // maybe no effect for some fucking shortcut from 360
+                    cellLayout.removeView(mDragInfo.cell);
+                } else {
+                    mDragInfo.cell.setVisibility(VISIBLE);
+                }
             }
         }
-        if ((d.cancelled || (beingCalledAfterUninstall && !mUninstallSuccessful))
-                && mDragInfo.cell != null) {
-            mDragInfo.cell.setVisibility(VISIBLE);
-        }
+        // if ((d.cancelled || (beingCalledAfterUninstall &&
+        // !mUninstallSuccessful))
+        // && mDragInfo.cell != null) {
+        // mDragInfo.cell.setVisibility(VISIBLE);
+        // }
         mDragOutline = null;
         mDragInfo = null;
     }
