@@ -219,6 +219,32 @@ public class DeleteDropTarget extends ButtonDropTarget {
                 isAllAppsApplication(source, info);
         boolean useDeleteLabel = !useUninstallLabel && source.supportsDeleteDropTarget();
 
+        boolean isApplication = false;
+        if (info instanceof ShortcutInfo) {
+            ShortcutInfo shortcut = (ShortcutInfo) info;
+            if (shortcut.intent != null && shortcut.intent.getComponent() != null) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                String shortcutPackageName = shortcut.intent.getComponent().getPackageName();
+                String shortcutClassName = shortcut.intent.getComponent().getClassName();
+                List<ResolveInfo> apps = mLauncher.getPackageManager().queryIntentActivities(intent, 0);
+                for (ResolveInfo ri : apps) {
+                    String infoPackageName = ri.activityInfo.packageName;
+                    String infoClassName = ri.activityInfo.name;
+                    if (infoPackageName.equals(shortcutPackageName)) {
+                        if (infoClassName.equals(shortcutClassName)) {
+                            // ITEM_TYPE_APPLICATION
+                            isApplication = true;
+                        } else {
+                            // ITEM_TYPE_SHORTCUT
+                            isApplication = false;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
         // If we are dragging an application from AppsCustomize, only show the control if we can
         // delete the app (it was downloaded), and rename the string to "uninstall" in such a case.
         // Hide the delete target if it is a widget from AppsCustomize.
@@ -244,6 +270,11 @@ public class DeleteDropTarget extends ButtonDropTarget {
         } else {
             isVisible = false;
         }
+        if (useDeleteLabel) {
+            setCompoundDrawablesRelativeWithIntrinsicBounds(
+                    isApplication ? mUninstallDrawable : mRemoveDrawable, null,
+                    null, null);
+        }
         mCurrentDrawable = (TransitionDrawable) getCurrentDrawable();
 
         mActive = isVisible;
@@ -252,6 +283,10 @@ public class DeleteDropTarget extends ButtonDropTarget {
         if (isVisible && getText().length() > 0) {
             setText(useUninstallLabel ? R.string.delete_target_uninstall_label
                 : R.string.delete_target_label);
+            if (useDeleteLabel) {
+                setText(isApplication ? R.string.delete_target_uninstall_label
+                        : R.string.delete_target_label);
+            }
         }
     }
 
