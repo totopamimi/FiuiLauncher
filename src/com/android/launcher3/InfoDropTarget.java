@@ -59,6 +59,11 @@ public class InfoDropTarget extends ButtonDropTarget {
         }
 
         if (null != mDrawable) {
+            // mDrawable.getDrawable(1).setColorFilter(
+            // getResources().getColor(R.color.info_target_tint),
+            // Mode.SRC_ATOP);
+            mDrawable.getDrawable(1).setTint(
+                    getResources().getColor(R.color.info_target_tint));
             mDrawable.setCrossFadeEnabled(true);
         }
 
