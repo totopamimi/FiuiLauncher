@@ -240,6 +240,9 @@ public class DeviceProfile {
         }
         // Hotseat
         hotseatIconSize = invDistWeightedInterpolate(minWidth, minHeight, points);
+        android.util.Log.i("DeviceProfile", "hotseatIconSize="
+                + hotseatIconSize + ",iconSize=" + iconSize);
+        // hotseatIconSize = iconSize;
 
         // If the partner customization apk contains any grid overrides, apply them
         applyPartnerDeviceProfileOverrides(context, dm);
@@ -248,6 +251,13 @@ public class DeviceProfile {
         updateFromConfiguration(context, res, wPx, hPx, awPx, ahPx);
         updateAvailableDimensions(context);
         computeAllAppsButtonSize(context);
+        boolean customColumnsRowsHotseatsForceEnabled = res
+                .getBoolean(R.bool.custom_columns_rows_hotseats_force_enabled);
+        if (customColumnsRowsHotseatsForceEnabled) {
+            numRows = res.getInteger(R.integer.ui_homescreen_rows);
+            numColumns = res.getInteger(R.integer.ui_homescreen_columns);
+            numHotseatIcons = res.getInteger(R.integer.ui_hotseat_icons);
+        }
     }
 
     /**

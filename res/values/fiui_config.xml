@@ -2,6 +2,10 @@
 <resources>
 
     <bool name="custom_workspace_enabled">true</bool>
+    <bool name="custom_columns_rows_hotseats_force_enabled">false</bool>
+    <integer name="ui_homescreen_columns">4</integer>
+    <integer name="ui_homescreen_rows">4</integer>
+    <integer name="ui_hotseat_icons">@integer/ui_homescreen_columns</integer>
     <color name="remove_target_tint">#33ff0000</color>
     <color name="info_target_tint">#330099cc</color>
 
