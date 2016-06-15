@@ -17,7 +17,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal|bottom"
+    android:layout_gravity="center"
+    android:layout_marginBottom="12dip"
     android:gravity="top"
     android:orientation="horizontal" >
 
