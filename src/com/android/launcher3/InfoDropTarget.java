@@ -22,6 +22,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.TransitionDrawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,8 +63,18 @@ public class InfoDropTarget extends ButtonDropTarget {
             // mDrawable.getDrawable(1).setColorFilter(
             // getResources().getColor(R.color.info_target_tint),
             // Mode.SRC_ATOP);
-            mDrawable.getDrawable(1).setTint(
-                    getResources().getColor(R.color.info_target_tint));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.L) {
+                mDrawable.getDrawable(1).setTint(
+                        getResources().getColor(R.color.info_target_tint));
+            } else {
+                mDrawable.getDrawable(1).setColorFilter(
+                        getResources().getColor(
+                                R.color.below_l_info_target_tint),
+                        android.graphics.PorterDuff.Mode.SRC_ATOP);
+                int alpha = getResources().getInteger(
+                        R.integer.below_l_droptarget_active_alpha);
+                mDrawable.getDrawable(1).setAlpha(alpha);
+            }
             mDrawable.setCrossFadeEnabled(true);
         }
 

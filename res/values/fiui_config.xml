@@ -6,10 +6,13 @@
     <integer name="ui_homescreen_columns">4</integer>
     <integer name="ui_homescreen_rows">4</integer>
     <integer name="ui_hotseat_icons">@integer/ui_homescreen_columns</integer>
+    <integer name="below_l_droptarget_active_alpha">64</integer>
     <string name="fiui_application_name" translatable="false">Fiui Launcher</string>
     <string name="fiui_application_version" translatable="false">0.1</string>
     <color name="remove_target_tint">#33ff0000</color>
     <color name="info_target_tint">#330099cc</color>
+    <color name="below_l_remove_target_tint">#ffff0000</color>
+    <color name="below_l_info_target_tint">#ff0099cc</color>
     <dimen name="hotseat_padding">12dip</dimen>
 
 </resources>

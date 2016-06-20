@@ -85,12 +85,29 @@ public class DeleteDropTarget extends ButtonDropTarget {
         mHoverColor = r.getColor(R.color.delete_target_hover_tint);
         mUninstallDrawable = (TransitionDrawable) 
                 r.getDrawable(R.drawable.uninstall_target_selector);
-        mUninstallDrawable.getDrawable(1).setTint(
-                getResources().getColor(R.color.remove_target_tint));
         mRemoveDrawable = (TransitionDrawable) r.getDrawable(R.drawable.remove_target_selector);
-        mRemoveDrawable.getDrawable(1).setTint(
-                getResources().getColor(R.color.remove_target_tint));
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.L) {
+            mUninstallDrawable.getDrawable(1).setTint(
+                    getResources().getColor(R.color.remove_target_tint));
+            mRemoveDrawable.getDrawable(1).setTint(
+                    getResources().getColor(R.color.remove_target_tint));
+        } else {
+            mUninstallDrawable.getDrawable(1)
+                    .setColorFilter(
+                            getResources().getColor(
+                                    R.color.below_l_remove_target_tint),
+                            android.graphics.PorterDuff.Mode.SRC_ATOP);
+            mRemoveDrawable.getDrawable(1)
+                    .setColorFilter(
+                            getResources().getColor(
+                                    R.color.below_l_remove_target_tint),
+                            android.graphics.PorterDuff.Mode.SRC_ATOP);
+            int alpha = getResources().getInteger(
+                    R.integer.below_l_droptarget_active_alpha);
+            mUninstallDrawable.getDrawable(1).setAlpha(alpha);
+            mRemoveDrawable.getDrawable(1).setAlpha(alpha);
+        }
         mRemoveDrawable.setCrossFadeEnabled(true);
         mUninstallDrawable.setCrossFadeEnabled(true);
 
