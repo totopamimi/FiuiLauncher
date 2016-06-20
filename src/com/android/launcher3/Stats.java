@@ -50,8 +50,6 @@ public class Stats {
 
     private final Launcher mLauncher;
 
-    private final String mLaunchBroadcastPermission;
-
     DataOutputStream mLog;
 
     ArrayList<String> mIntents;
@@ -59,9 +57,6 @@ public class Stats {
 
     public Stats(Launcher launcher) {
         mLauncher = launcher;
-
-        mLaunchBroadcastPermission =
-                launcher.getResources().getString(R.string.receive_launch_broadcasts_permission);
 
         loadStats();
 
@@ -78,21 +73,6 @@ public class Stats {
                 Log.e(TAG, "unable to write to stats log: " + e);
                 mLog = null;
             }
-        }
-
-        if (DEBUG_BROADCASTS) {
-            launcher.registerReceiver(
-                    new BroadcastReceiver() {
-                        @Override
-                        public void onReceive(Context context, Intent intent) {
-                            android.util.Log.v("Stats", "got broadcast: " + intent + " for launched intent: "
-                                    + intent.getStringExtra(EXTRA_INTENT));
-                        }
-                    },
-                    new IntentFilter(ACTION_LAUNCH),
-                    mLaunchBroadcastPermission,
-                    null
-            );
         }
     }
 
@@ -115,15 +95,6 @@ public class Stats {
         intent.setSourceBounds(null);
 
         final String flat = intent.toUri(0);
-
-        Intent broadcastIntent = new Intent(ACTION_LAUNCH).putExtra(EXTRA_INTENT, flat);
-        if (shortcut != null) {
-            broadcastIntent.putExtra(EXTRA_CONTAINER, shortcut.container)
-                    .putExtra(EXTRA_SCREEN, shortcut.screenId)
-                    .putExtra(EXTRA_CELLX, shortcut.cellX)
-                    .putExtra(EXTRA_CELLY, shortcut.cellY);
-        }
-        mLauncher.sendBroadcast(broadcastIntent, mLaunchBroadcastPermission);
 
         incrementLaunch(flat);
 
