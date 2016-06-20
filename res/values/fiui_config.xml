@@ -14,5 +14,6 @@
     <color name="below_l_remove_target_tint">#ffff0000</color>
     <color name="below_l_info_target_tint">#ff0099cc</color>
     <dimen name="hotseat_padding">12dip</dimen>
+    <dimen name="expand_notifications_panel_gesture_y_distance">120dip</dimen>
 
 </resources>

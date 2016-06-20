@@ -29,6 +29,7 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -51,6 +52,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 interface Page {
@@ -1472,6 +1474,18 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
                 resetTouchState();
+                if (mAllowOverScroll) {
+                    float distance = Math.abs(ev.getY() - mLastMotionY);
+                    int shortestDistance = getContext()
+                            .getResources()
+                            .getDimensionPixelSize(
+                                    R.dimen.expand_notifications_panel_gesture_y_distance);
+                    if (distance > shortestDistance && ev.getY() > mLastMotionY) {
+                        expandNotificationsPanel(getContext());
+                    } else if (distance > 30 && ev.getY() < mLastMotionY) {
+                        // collapsePanels(getContext());
+                    }
+                }
                 break;
 
             case MotionEvent.ACTION_POINTER_UP:
@@ -1485,6 +1499,40 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
          * drag mode.
          */
         return mTouchState != TOUCH_STATE_REST;
+    }
+
+    private void expandNotificationsPanel(Context ctx) {
+        Object sbservice = ctx.getSystemService("statusbar");
+        try {
+            Class<?> statusBarManager = Class
+                    .forName("android.app.StatusBarManager");
+            Method expand;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                expand = statusBarManager.getMethod("expandNotificationsPanel");
+            } else {
+                expand = statusBarManager.getMethod("expand");
+            }
+            expand.invoke(sbservice);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void collapsePanels(Context ctx) {
+        Object sbservice = ctx.getSystemService("statusbar");
+        try {
+            Class<?> statusBarManager = Class
+                    .forName("android.app.StatusBarManager");
+            Method collapse;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                collapse = statusBarManager.getMethod("collapsePanels");
+            } else {
+                collapse = statusBarManager.getMethod("collapse");
+            }
+            collapse.invoke(sbservice);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     protected void determineScrollingStart(MotionEvent ev) {
