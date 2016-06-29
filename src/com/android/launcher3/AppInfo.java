@@ -140,6 +140,6 @@ public class AppInfo extends ItemInfo {
             .addCategory(Intent.CATEGORY_LAUNCHER)
             .setComponent(info.getComponentName())
             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
-            .putExtra(EXTRA_PROFILE, serialNumber);
+            /*.putExtra(EXTRA_PROFILE, serialNumber)*/;
     }
 }

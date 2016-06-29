@@ -391,6 +391,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
         // AppWidget
         // if item is shortcut, uninstall
         if (item instanceof ShortcutInfo && !isUninstallFromWorkspace(d)) {
+            // remove item after app uninstalled.
             ShortcutInfo shortcut = (ShortcutInfo) item;
             if (shortcut.intent != null && shortcut.intent.getComponent() != null) {
                 // PackageInfo pi = pm.getPackageInfo(shortcutPackageName,
@@ -425,6 +426,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
             mLauncher.startApplicationUninstallActivity(appInfo.componentName, appInfo.flags,
                     appInfo.user);
         } else if (isUninstallFromWorkspace(d)) {
+            // remove item directly from app shortcut
             ShortcutInfo shortcut = (ShortcutInfo) item;
             if (shortcut.intent != null && shortcut.intent.getComponent() != null) {
                 final ComponentName componentName = shortcut.intent.getComponent();

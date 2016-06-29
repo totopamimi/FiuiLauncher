@@ -107,19 +107,13 @@
 
     <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
     <!-- Dialer, Contacts, [All Apps], Messaging, Browser -->
-    <resolve
+    <favorite
+        launcher:packageName="com.android.dialer"
+        launcher:className="com.android.dialer.DialtactsActivity"
         launcher:container="-101"
         launcher:screen="0"
         launcher:x="0"
-        launcher:y="0" >
-        <favorite launcher:uri="#Intent;action=android.intent.action.DIAL;end" />
-        <favorite launcher:uri="tel:123" />
-        <favorite launcher:uri="#Intent;action=android.intent.action.CALL_BUTTON;end" />
-
-        <favorite
-            launcher:packageName="com.android.dialer"
-            launcher:className="com.android.dialer.DialtactsActivity" />
-    </resolve>
+        launcher:y="0" />
 
     <favorite
         launcher:packageName="com.android.contacts"
@@ -129,34 +123,20 @@
         launcher:x="1"
         launcher:y="0" />
 
-    <resolve
+    <favorite
+        launcher:packageName="com.android.mms"
+        launcher:className="com.android.mms.ui.ConversationList"
         launcher:container="-101"
         launcher:screen="2"
         launcher:x="2"
-        launcher:y="0" >
-        <favorite
-            launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MESSAGING;end" />
-        <favorite launcher:uri="sms:" />
-        <favorite launcher:uri="smsto:" />
-        <favorite launcher:uri="mms:" />
-        <favorite launcher:uri="mmsto:" />
+        launcher:y="0" />
 
-        <favorite
-            launcher:packageName="com.android.mms"
-            launcher:className="com.android.mms.ui.ConversationList" />
-    </resolve>
-    <resolve
+    <favorite
+        launcher:packageName="com.android.browser"
+        launcher:className="com.android.browser.BrowserActivity"
         launcher:container="-101"
         launcher:screen="3"
         launcher:x="3"
-        launcher:y="0" >
-        <favorite
-            launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_BROWSER;end" />
-        <favorite launcher:uri="http://www.example.com/" />
-
-        <favorite
-            launcher:packageName="com.android.browser"
-            launcher:className="com.android.browser.BrowserActivity" />
-    </resolve>
+        launcher:y="0" />
 
 </favorites>

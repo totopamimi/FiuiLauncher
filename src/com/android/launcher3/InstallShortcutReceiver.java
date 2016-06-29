@@ -237,7 +237,7 @@ public class InstallShortcutReceiver extends BroadcastReceiver {
                 && launchIntent.getCategories() != null
                 && launchIntent.getCategories().size() == 1
                 && launchIntent.hasCategory(Intent.CATEGORY_LAUNCHER)
-                && launchIntent.getExtras() == null
+                && launchIntent.getExtras() != null
                 && TextUtils.isEmpty(launchIntent.getDataString())) {
             return false;
         }

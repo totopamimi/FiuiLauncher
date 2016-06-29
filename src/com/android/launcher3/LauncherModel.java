@@ -873,9 +873,9 @@ public class LauncherModel extends BroadcastReceiver
         String userSerial = Long.toString(UserManagerCompat.getInstance(context)
                 .getSerialNumberForUser(user));
         Cursor c = cr.query(LauncherSettings.Favorites.CONTENT_URI,
-            new String[] { "title", "intent", "profileId" },
-            "title=? and (intent=? or intent=?) and profileId=?",
-            new String[] { title, intentWithPkg.toUri(0), intentWithoutPkg.toUri(0), userSerial },
+            new String[] { "intent" },
+            "intent=? or intent=?",
+            new String[] { intentWithPkg.toUri(0), intentWithoutPkg.toUri(0) },
             null);
         try {
             return c.moveToFirst();
@@ -2103,7 +2103,7 @@ public class LauncherModel extends BroadcastReceiver
                                     info.cellY = c.getInt(cellYIndex);
                                     info.spanX = 1;
                                     info.spanY = 1;
-                                    info.intent.putExtra(ItemInfo.EXTRA_PROFILE, serialNumber);
+                                    // info.intent.putExtra(ItemInfo.EXTRA_PROFILE, serialNumber);
                                     info.isDisabled = disabledState;
                                     if (isSafeMode && !Utilities.isSystemApp(context, intent)) {
                                         info.isDisabled |= ShortcutInfo.FLAG_DISABLED_SAFEMODE;
