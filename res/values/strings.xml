@@ -25,7 +25,7 @@
     <string name="old_launcher_provider_uri" translatable="false">content://com.android.launcher2.settings/favorites?notify=true</string>
 
     <!-- Permission to receive the com.android.launcher3.action.FIRST_LOAD_COMPLETE intent -->
-    <string name="receive_first_load_broadcast_permission" translatable="false">com.android.launcher3.permission.RECEIVE_FIRST_LOAD_BROADCAST</string>
+    <string name="receive_first_load_broadcast_permission" translatable="false">com.android.launcher3.fiui.permission.RECEIVE_FIRST_LOAD_BROADCAST</string>
 
     <!-- Application name -->
     <string name="application_name">Launcher3</string>
