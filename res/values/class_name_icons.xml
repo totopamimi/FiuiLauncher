@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <array name="fiui_icon_classnames_ids">
+        <item>@android:drawable/sym_def_app_icon</item><!--0-->
+        <item>@drawable/com_zui_cameragallery_camera_cameraactivity</item><!--1-->
+        <item>@drawable/com_zui_cameragallery_gallery_app_galleryactivity</item><!--2-->
+        <item>@drawable/com_android_newcontact_vl_activity_dialpadshutcut</item><!--3-->
+        <item>@drawable/com_android_newcontact_vl_activity_xlaunchactivity</item><!--4-->
+    </array>
+
+    <string-array name="fiui_icon_classnames">
+        <item>"a.a.a.a.a.a.a.a"</item><!--0-->
+        <item>"com.zui.cameragallery.camera.CameraActivity"</item><!--1-->
+        <item>"com.zui.cameragallery.gallery.app.GalleryActivity"</item><!--2-->
+        <item>"com.android.newcontact.vl.activity.DialpadShutcut"</item><!--3-->
+        <item>"com.android.newcontact.vl.activity.XLaunchActivity"</item><!--4-->
+    </string-array>
+
+</resources>

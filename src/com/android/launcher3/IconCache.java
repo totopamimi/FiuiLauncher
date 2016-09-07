@@ -25,6 +25,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -345,6 +346,48 @@ public class IconCache {
                                 componentName.toShortString());
                         entry.icon = getDefaultIcon(user);
                     }
+                }
+            }
+
+            boolean fiuiIconPackageNameEnabled = mContext.getResources().
+                    getBoolean(R.bool.fiui_icon_packagename_enabled);
+            if (fiuiIconPackageNameEnabled) {
+                final String[] fiuiIconPackageNames =
+                        mContext.getResources().getStringArray(R.array.fiui_icon_packagenames);
+                final TypedArray fiuiIconPackageNameIds =
+                        mContext.getResources().obtainTypedArray(R.array.fiui_icon_packagenames_ids);
+                int resPackageNameId = -1;
+                final String packageName = componentName.getPackageName();
+                for (int i = 0; i < fiuiIconPackageNames.length; i++) {
+                    if (packageName.equals(fiuiIconPackageNames[i])) {
+                        resPackageNameId = i;
+                        break;
+                    }
+                }
+                if (resPackageNameId != -1) {
+                    entry.icon = Utilities.createIconBitmap(fiuiIconPackageNameIds.
+                            getDrawable(resPackageNameId), mContext);
+                }
+            }
+
+            boolean fiuiIconClassNameEnabled = mContext.getResources().
+                    getBoolean(R.bool.fiui_icon_classname_enabled);
+            if (fiuiIconClassNameEnabled) {
+                final String[] fiuiIconClassNames =
+                        mContext.getResources().getStringArray(R.array.fiui_icon_classnames);
+                final TypedArray fiuiIconClassNameIds =
+                        mContext.getResources().obtainTypedArray(R.array.fiui_icon_classnames_ids);
+                int resClassNameId = -1;
+                final String className = componentName.getClassName();
+                for (int i = 0; i < fiuiIconClassNames.length; i++) {
+                    if (className.equals(fiuiIconClassNames[i])) {
+                        resClassNameId = i;
+                        break;
+                    }
+                }
+                if (resClassNameId != -1) {
+                    entry.icon = Utilities.createIconBitmap(fiuiIconClassNameIds.
+                            getDrawable(resClassNameId), mContext);
                 }
             }
         }

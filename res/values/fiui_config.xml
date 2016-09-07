@@ -3,6 +3,8 @@
 
     <bool name="custom_workspace_enabled">true</bool>
     <bool name="custom_columns_rows_hotseats_force_enabled">false</bool>
+    <bool name="fiui_icon_classname_enabled">true</bool><!--high priority-->
+    <bool name="fiui_icon_packagename_enabled">true</bool><!--low priority-->
     <integer name="ui_homescreen_columns">4</integer>
     <integer name="ui_homescreen_rows">4</integer>
     <integer name="ui_hotseat_icons">@integer/ui_homescreen_columns</integer>

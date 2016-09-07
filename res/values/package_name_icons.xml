@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <array name="fiui_icon_packagenames_ids">
+        <item>@drawable/com_zui_deskclock</item><!--0-->
+        <item>@drawable/com_zui_launcher</item><!--1-->
+        <item>@drawable/com_zui_mms</item><!--2-->
+        <item>@drawable/com_zui_ota</item><!--3-->
+        <item>@drawable/com_zui_recorder</item><!--4-->
+        <item>@drawable/com_zui_calendar</item><!--5-->
+        <item>@drawable/com_zui_browser</item><!--6-->
+    </array>
+
+    <string-array name="fiui_icon_packagenames">
+        <item>"com.zui.deskclock"</item><!--0-->
+        <item>"com.zui.launcher"</item><!--1-->
+        <item>"com.zui.mms"</item><!--2-->
+        <item>"com.zui.ota"</item><!--3-->
+        <item>"com.zui.recorder"</item><!--4-->
+        <item>"com.zui.calendar"</item><!--5-->
+        <item>"com.zui.browser"</item><!--6-->
+    </string-array>
+
+</resources>
