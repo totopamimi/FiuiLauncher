@@ -5012,7 +5012,7 @@ public class Launcher extends Activity
         LauncherClings launcherClings = new LauncherClings(this);
         if (launcherClings.shouldShowFirstRunOrMigrationClings()) {
             if (mModel.canMigrateFromOldLauncherDb(this)) {
-                launcherClings.showMigrationCling();
+                // launcherClings.showMigrationCling();
             } else {
                 launcherClings.showLongPressCling(true);
             }
