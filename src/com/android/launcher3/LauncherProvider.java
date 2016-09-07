@@ -744,8 +744,9 @@ public class LauncherProvider extends ContentProvider {
                 }
 
                 // Add default hotseat icons
-                loadFavorites(db, new DefaultLayoutParser(mContext, mAppWidgetHost, this,
-                        mContext.getResources(), R.xml.update_workspace));
+                // loadFavorites(db, new DefaultLayoutParser(mContext,
+                // mAppWidgetHost, this,
+                // mContext.getResources(), R.xml.update_workspace));
                 version = 9;
             }
 
