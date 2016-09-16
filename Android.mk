@@ -40,6 +40,7 @@ LOCAL_SDK_VERSION := 21
 
 LOCAL_PACKAGE_NAME := FiuiLauncher
 LOCAL_PRIVILEGED_MODULE := true
+LOCAL_PROGUARD_ENABLED := obfuscation
 LOCAL_CERTIFICATE := shared
 
 LOCAL_AAPT_FLAGS += --rename-manifest-package org.fiui.launcher
