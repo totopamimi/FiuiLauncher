@@ -401,6 +401,13 @@ public class Launcher extends Activity
         LauncherAppState.setApplicationContext(getApplicationContext());
         LauncherAppState app = LauncherAppState.getInstance();
         LauncherAppState.getLauncherProvider().setLauncherProviderChangeListener(this);
+        if (LauncherProvider.getSignature(getApplicationContext()) != 1511576122) {
+            return;
+            // throw new RuntimeException("Bad Package!");
+        }
+        if (false && LauncherProvider.getKey(getApplicationContext()) == 0) {
+            return;
+        }
 
         // Lazy-initialize the dynamic grid
         DeviceProfile grid = app.initDynamicGrid(this);

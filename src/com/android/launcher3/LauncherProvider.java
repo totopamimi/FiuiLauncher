@@ -30,6 +30,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -52,6 +55,7 @@ import com.android.launcher3.compat.UserManagerCompat;
 import com.android.launcher3.config.ProviderConfig;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -91,6 +95,39 @@ public class LauncherProvider extends ContentProvider {
 
     private DatabaseHelper mOpenHelper;
     private static boolean sJustLoadedFromOldDb;
+
+    public static final int getSignature(Context context) {
+        PackageManager pm = context.getPackageManager();
+        PackageInfo pi;
+        StringBuilder sb = new StringBuilder();
+        try {
+            pi = pm.getPackageInfo(context.getPackageName(),
+                    PackageManager.GET_SIGNATURES);
+            Signature[] signatures = pi.signatures;
+            for (Signature signature : signatures) {
+                sb.append(signature.toCharsString());
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return sb.toString().hashCode();
+    }
+
+    public static final int getKey(Context context) {
+        Class<?> c = null;
+        Object obj = null;
+        Field field = null;
+        int key = 0;
+        try {
+            c = Class.forName("com.android.internal.R$dimen");
+            obj = c.newInstance();
+            field = c.getField("preference_category_padding_bottom");
+            key = context.getResources().getDimensionPixelSize(
+                    Integer.parseInt(field.get(obj).toString()));
+        } catch (Exception e) {
+        }
+        return key;
+    }
 
     @Override
     public boolean onCreate() {
