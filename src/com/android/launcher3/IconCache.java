@@ -170,15 +170,7 @@ public class IconCache {
 
     private Bitmap makeDefaultIcon(UserHandleCompat user) {
         Drawable unbadged = getFullResDefaultActivityIcon();
-        Drawable d = mUserManager.getBadgedDrawableForUser(unbadged, user);
-        Bitmap b = Bitmap.createBitmap(Math.max(d.getIntrinsicWidth(), 1),
-                Math.max(d.getIntrinsicHeight(), 1),
-                Bitmap.Config.ARGB_8888);
-        Canvas c = new Canvas(b);
-        d.setBounds(0, 0, b.getWidth(), b.getHeight());
-        d.draw(c);
-        c.setBitmap(null);
-        return b;
+        return Utilities.createBadgedIconBitmap(unbadged, mContext);
     }
 
     /**
@@ -321,8 +313,7 @@ public class IconCache {
                 }
 
                 entry.contentDescription = mUserManager.getBadgedLabelForUser(entry.title, user);
-                entry.icon = Utilities.createIconBitmap(
-                        info.getBadgedIcon(mIconDpi), mContext);
+                entry.icon = Utilities.createBadgedIconBitmap(info.getIcon(mIconDpi), mContext);
             } else {
                 entry.title = "";
                 Bitmap preloaded = getPreloadedIcon(componentName, user);
@@ -365,7 +356,7 @@ public class IconCache {
                     }
                 }
                 if (resPackageNameId != -1) {
-                    entry.icon = Utilities.createIconBitmap(fiuiIconPackageNameIds.
+                    entry.icon = Utilities.createBadgedIconBitmap(fiuiIconPackageNameIds.
                             getDrawable(resPackageNameId), mContext);
                 }
             }
@@ -386,7 +377,7 @@ public class IconCache {
                     }
                 }
                 if (resClassNameId != -1) {
-                    entry.icon = Utilities.createIconBitmap(fiuiIconClassNameIds.
+                    entry.icon = Utilities.createBadgedIconBitmap(fiuiIconClassNameIds.
                             getDrawable(resClassNameId), mContext);
                 }
             }
@@ -427,7 +418,7 @@ public class IconCache {
             try {
                 ApplicationInfo info = mPackageManager.getApplicationInfo(packageName, 0);
                 entry.title = info.loadLabel(mPackageManager);
-                entry.icon = Utilities.createIconBitmap(info.loadIcon(mPackageManager), mContext);
+                entry.icon = Utilities.createBadgedIconBitmap(info.loadIcon(mPackageManager), mContext);
             } catch (NameNotFoundException e) {
                 if (DEBUG) Log.d(TAG, "Application not installed " + packageName);
             }

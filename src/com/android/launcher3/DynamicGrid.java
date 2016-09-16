@@ -33,7 +33,7 @@ public class DynamicGrid {
     private float mMinHeight;
 
     // This is a static that we use for the default icon size on a 4/5-inch phone
-    static float DEFAULT_ICON_SIZE_DP = 52;
+    static float DEFAULT_ICON_SIZE_DP = 60;
     static float DEFAULT_ICON_SIZE_PX = 0;
 
     public static float dpiFromPx(int size, DisplayMetrics metrics){

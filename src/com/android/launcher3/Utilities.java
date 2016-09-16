@@ -147,10 +147,19 @@ public final class Utilities {
         return createIconBitmap(new BitmapDrawable(context.getResources(), icon), context);
     }
 
+    public static Bitmap createBadgedIconBitmap(Drawable icon, Context context) {
+        float scale = IconNormalizer.getInstance(context).getScale(icon);
+        return createIconBitmap(icon, context, scale);
+    }
+
+    public static Bitmap createIconBitmap(Drawable icon, Context context) {
+        return createIconBitmap(icon, context, 1.0f /* scale */);
+    }
+
     /**
      * Returns a bitmap suitable for the all apps view.
      */
-    public static Bitmap createIconBitmap(Drawable icon, Context context) {
+    public static Bitmap createIconBitmap(Drawable icon, Context context, float scale) {
         synchronized (sCanvas) { // we share the statics :-(
             if (sIconWidth == -1) {
                 initStatics(context);
@@ -167,7 +176,7 @@ public final class Utilities {
                 // Ensure the bitmap has a density.
                 BitmapDrawable bitmapDrawable = (BitmapDrawable) icon;
                 Bitmap bitmap = bitmapDrawable.getBitmap();
-                if (bitmap.getDensity() == Bitmap.DENSITY_NONE) {
+                if (bitmap != null && bitmap.getDensity() == Bitmap.DENSITY_NONE) {
                     bitmapDrawable.setTargetDensity(context.getResources().getDisplayMetrics());
                 }
             }
@@ -208,7 +217,10 @@ public final class Utilities {
 
             sOldBounds.set(icon.getBounds());
             icon.setBounds(left, top, left+width, top+height);
+            canvas.save(Canvas.MATRIX_SAVE_FLAG);
+            canvas.scale(scale, scale, textureWidth / 2, textureHeight / 2);
             icon.draw(canvas);
+            canvas.restore();
             icon.setBounds(sOldBounds);
             canvas.setBitmap(null);
 
