@@ -1347,7 +1347,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         for (int j = 0; j < mContent.getCountY(); j++) {
             for (int i = 0; i < mContent.getCountX(); i++) {
                 View v = mContent.getChildAt(i, j);
-                if (v.getTag() == item) {
+                if (v != null && v.getTag() == item) {
                     return v;
                 }
             }
