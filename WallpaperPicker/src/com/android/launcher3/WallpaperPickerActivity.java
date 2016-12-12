@@ -16,6 +16,7 @@
 
 package com.android.launcher3;
 
+import android.Manifest.permission;
 import android.animation.LayoutTransition;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
@@ -40,9 +41,11 @@ import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LevelListDrawable;
+import android.Manifest;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Process;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -682,6 +685,16 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
     }
 
     protected Bitmap getThumbnailOfLastPhoto() {
+        boolean canReadExternalStorage = checkPermission(
+                Manifest.permission.READ_EXTERNAL_STORAGE, Process.myPid(), Process.myUid()) ==
+                PackageManager.PERMISSION_GRANTED;
+
+        if (!canReadExternalStorage) {
+            // MediaStore.Images.Media.EXTERNAL_CONTENT_URI requires
+            // the READ_EXTERNAL_STORAGE permission
+            return null;
+        }
+
         Cursor cursor = MediaStore.Images.Media.query(getContentResolver(),
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                 new String[] { MediaStore.Images.ImageColumns._ID,
