@@ -72,7 +72,7 @@
         android:allowBackup="@bool/enable_backup"
         android:backupAgent="com.android.launcher3.LauncherBackupAgentHelper"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher_home"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/fiui_application_name"
         android:largeHeap="@bool/config_largeHeap"
         android:restoreAnyVersion="true"
@@ -116,7 +116,7 @@
             android:name="com.android.launcher3.ToggleWeightWatcher"
             android:label="@string/toggle_weight_watcher"
             android:enabled="@bool/debug_memory_enabled"
-            android:icon="@mipmap/ic_launcher_home">
+            android:icon="@mipmap/ic_launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -158,7 +158,7 @@
             android:label="@string/debug_memory_activity"
             android:enabled="@bool/debug_memory_enabled"
             android:excludeFromRecents="true"
-            android:icon="@mipmap/ic_launcher_home"
+            android:icon="@mipmap/ic_launcher"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
