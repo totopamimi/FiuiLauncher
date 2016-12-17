@@ -95,6 +95,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Advanceable;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.launcher3.DropTarget.DragObject;
@@ -2947,6 +2948,7 @@ public class Launcher extends Activity
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     boolean startActivity(View v, Intent intent, Object tag) {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         try {
@@ -2965,10 +2967,34 @@ public class Launcher extends Activity
 
             Bundle optsBundle = null;
             if (useLaunchAnimation) {
-                ActivityOptions opts = Utilities.isLmpOrAbove() ?
-                        ActivityOptions.makeCustomAnimation(this, R.anim.task_open_enter, R.anim.no_anim) :
-                        ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getMeasuredWidth(), v.getMeasuredHeight());
-                optsBundle = opts.toBundle();
+                ActivityOptions opts = null;
+                if (Utilities.ATLEAST_MARSHMALLOW) {
+                    int left = 0, top = 0;
+                    int width = v.getMeasuredWidth(), height = v.getMeasuredHeight();
+                    if (v instanceof TextView) {
+                        // Launch from center of icon, not entire view
+                        Drawable icon = Workspace.getTextViewIcon((TextView) v);
+                        if (icon != null) {
+                            Rect bounds = icon.getBounds();
+                            left = (width - bounds.width()) / 2;
+                            top = v.getPaddingTop();
+                            width = bounds.width();
+                            height = bounds.height();
+                        }
+                    }
+                    opts = ActivityOptions.makeClipRevealAnimation(v, left, top, width, height);
+                } else if (!Utilities.ATLEAST_LOLLIPOP) {
+                    // Below L, we use a scale up animation
+                    opts = ActivityOptions.makeScaleUpAnimation(v, 0, 0,
+                            v.getMeasuredWidth(), v.getMeasuredHeight());
+                } else if (Utilities.ATLEAST_LOLLIPOP) {
+                    // On L devices, we use the device default slide-up transition.
+                    // On L MR1 devices, we a custom version of the slide-up transition which
+                    // doesn't have the delay present in the device default.
+                    opts = ActivityOptions.makeCustomAnimation(this,
+                            R.anim.task_open_enter, R.anim.no_anim);
+                }
+                optsBundle = opts != null ? opts.toBundle() : null;
             }
 
             if (user == null || user.equals(UserHandleCompat.myUserHandle())) {
@@ -3342,6 +3368,7 @@ public class Launcher extends Activity
         showAppsCustomizeHelper(animated, springLoaded, contentType);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void showAppsCustomizeHelper(final boolean animated, final boolean springLoaded,
                                          final AppsCustomizePagedView.ContentType contentType) {
         if (mStateAnimation != null) {

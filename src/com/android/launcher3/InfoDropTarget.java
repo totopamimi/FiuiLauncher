@@ -63,7 +63,7 @@ public class InfoDropTarget extends ButtonDropTarget {
             // mDrawable.getDrawable(1).setColorFilter(
             // getResources().getColor(R.color.info_target_tint),
             // Mode.SRC_ATOP);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.L) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 mDrawable.getDrawable(1).setTint(
                         getResources().getColor(R.color.info_target_tint));
             } else {

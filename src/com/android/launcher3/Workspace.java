@@ -2577,6 +2577,19 @@ public class Workspace extends SmoothPagedView
         }
     }
 
+    /**
+     * Returns the drawable for the given text view.
+     */
+    public static Drawable getTextViewIcon(TextView tv) {
+        final Drawable[] drawables = tv.getCompoundDrawables();
+        for (int i = 0; i < drawables.length; i++) {
+            if (drawables[i] != null) {
+                return drawables[i];
+            }
+        }
+        return null;
+    }
+
     private void onTransitionEnd() {
         mIsSwitchingState = false;
         updateChildrenLayersEnabled(false);

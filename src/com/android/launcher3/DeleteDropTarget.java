@@ -87,7 +87,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
                 r.getDrawable(R.drawable.uninstall_target_selector);
         mRemoveDrawable = (TransitionDrawable) r.getDrawable(R.drawable.remove_target_selector);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.L) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mUninstallDrawable.getDrawable(1).setTint(
                     getResources().getColor(R.color.remove_target_tint));
             mRemoveDrawable.getDrawable(1).setTint(
