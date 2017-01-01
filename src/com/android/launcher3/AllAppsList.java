@@ -98,13 +98,7 @@ class AllAppsList {
                 user);
 
         for (LauncherActivityInfoCompat info : matches) {
-            // add(new AppInfo(context, info, user, mIconCache, null));
-            AppInfo mAppInfo = new AppInfo(context, info, user, mIconCache,
-                    null);
-            if (!LauncherModel.shortcutExists(context,
-                    mAppInfo.title.toString(), mAppInfo.intent, user)) {
-                add(mAppInfo);
-            }
+            add(new AppInfo(context, info, user, mIconCache, null));
         }
     }
 
@@ -156,13 +150,7 @@ class AllAppsList {
                         info.getComponentName().getPackageName(), user,
                         info.getComponentName().getClassName());
                 if (applicationInfo == null) {
-                    // add(new AppInfo(context, info, user, mIconCache, null));
-                    AppInfo mAppInfo = new AppInfo(context, info, user,
-                            mIconCache, null);
-                    if (!LauncherModel.shortcutExists(context,
-                            mAppInfo.title.toString(), mAppInfo.intent, user)) {
-                        add(mAppInfo);
-                    }
+                    add(new AppInfo(context, info, user, mIconCache, null));
                 } else {
                     mIconCache.remove(applicationInfo.componentName, user);
                     mIconCache.getTitleAndIcon(applicationInfo, info, null);

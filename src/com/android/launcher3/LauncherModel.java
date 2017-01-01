@@ -870,8 +870,6 @@ public class LauncherModel extends BroadcastReceiver
             intentWithPkg = intent;
             intentWithoutPkg = intent;
         }
-        String userSerial = Long.toString(UserManagerCompat.getInstance(context)
-                .getSerialNumberForUser(user));
         Cursor c = cr.query(LauncherSettings.Favorites.CONTENT_URI,
             new String[] { "intent" },
             "intent=? or intent=?",
@@ -2845,13 +2843,7 @@ public class LauncherModel extends BroadcastReceiver
                 for (int i = 0; i < apps.size(); i++) {
                     LauncherActivityInfoCompat app = apps.get(i);
                     // This builds the icon bitmaps.
-                    // mBgAllAppsList.add(new AppInfo(mContext, app, user, mIconCache, mLabelCache));
-                    AppInfo mAppInfo = new AppInfo(mContext, app, user,
-                            mIconCache, mLabelCache);
-                    if (!LauncherModel.shortcutExists(mContext,
-                            mAppInfo.title.toString(), mAppInfo.intent, user)) {
-                        mBgAllAppsList.add(mAppInfo);
-                    }
+                    mBgAllAppsList.add(new AppInfo(mContext, app, user, mIconCache, mLabelCache));
                 }
 
                 if (ADD_MANAGED_PROFILE_SHORTCUTS && !user.equals(UserHandleCompat.myUserHandle())) {

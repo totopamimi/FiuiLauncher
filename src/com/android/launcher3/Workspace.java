@@ -1053,6 +1053,21 @@ public class Workspace extends SmoothPagedView
         ItemInfo info = (ItemInfo) child.getTag();
         int childId = mLauncher.getViewIdForItem(info);
 
+        /*
+        if (info instanceof ShortcutInfo) {
+            ShortcutInfo mShortcutInfo = (ShortcutInfo) info;
+            if (mShortcutInfo != null) {
+                Intent intent = mShortcutInfo.getIntent();
+                if (intent != null) {
+                    if (LauncherModel.shortcutExists(mLauncher, null, intent, mShortcutInfo.user)) {
+                        Log.i(TAG, intent + " already exsit.");
+                        return;
+                    }
+                }
+            }
+        }
+        */
+
         boolean markCellsAsOccupied = !(child instanceof Folder);
         if (!layout.addViewToCellLayout(child, insert ? 0 : -1, childId, lp, markCellsAsOccupied)) {
             // TODO: This branch occurs when the workspace is adding views

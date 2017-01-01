@@ -29,8 +29,8 @@ android {
         applicationId "org.fiui.launcher"
         minSdkVersion 16
         targetSdkVersion 24
-        versionCode 02
-        versionName "0.2"
+        versionCode 03
+        versionName "0.3"
     }
     sourceSets {
         main {
