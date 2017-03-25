@@ -1,5 +1,5 @@
     #指定代码的压缩级别
-    -optimizationpasses 5
+    -optimizationpasses 25
     
     #包明不混合大小写
     -dontusemixedcaseclassnames

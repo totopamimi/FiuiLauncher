@@ -23,6 +23,30 @@ android {
 
     }
 
+    signingConfigs {
+        debug {
+        }
+        release {
+            storeFile file("test.keystore")
+            storePassword "testtest"
+            keyAlias "fiui"
+            keyPassword "testtest"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
