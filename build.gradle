@@ -10,7 +10,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:2.3.0'
     }
 }
 
@@ -18,8 +18,8 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.2'
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
 
 //    compileOptions {
 //        sourceCompatibility JavaVersion.VERSION_1_7
@@ -28,9 +28,9 @@ android {
     defaultConfig {
         applicationId "org.fiui.launcher"
         minSdkVersion 16
-        targetSdkVersion 24
-        versionCode 03
-        versionName "0.3"
+        targetSdkVersion 25
+        versionCode 04
+        versionName "0.4"
     }
     sourceSets {
         main {
@@ -75,6 +75,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:support-v4:25.3.0'
     compile project(':WallpaperPicker')
 }

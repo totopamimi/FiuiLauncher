@@ -59,13 +59,17 @@ public class LauncherAppState implements DeviceProfile.DeviceProfileCallbacks {
     private static WeakReference<LauncherProvider> sLauncherProvider;
     private static Context sContext;
 
-    private static LauncherAppState INSTANCE;
+    private volatile static LauncherAppState INSTANCE;
 
     private DynamicGrid mDynamicGrid;
 
     public static LauncherAppState getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new LauncherAppState();
+            synchronized (LauncherAppState.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new LauncherAppState();
+                }
+            }
         }
         return INSTANCE;
     }

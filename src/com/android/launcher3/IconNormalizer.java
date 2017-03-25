@@ -40,7 +40,7 @@ public class IconNormalizer {
     private static final int MIN_VISIBLE_ALPHA = 40;
 
     private static final Object LOCK = new Object();
-    private static IconNormalizer sIconNormalizer;
+    private volatile static IconNormalizer sIconNormalizer;
 
     private final int mMaxSize;
     private final Bitmap mBitmap;
@@ -228,9 +228,11 @@ public class IconNormalizer {
     }
 
     public static IconNormalizer getInstance(Context context) {
-        synchronized (LOCK) {
-            if (sIconNormalizer == null) {
-                sIconNormalizer = new IconNormalizer(context);
+        if (sIconNormalizer == null) {
+            synchronized (LOCK) {
+                if (sIconNormalizer == null) {
+                    sIconNormalizer = new IconNormalizer(context.getApplicationContext());
+                }
             }
         }
         return sIconNormalizer;
