@@ -21,10 +21,12 @@
         <item>@drawable/app_android_ninestore</item>
         <item>@drawable/au_com_shiftyjelly_pocketcasts</item>
         <item>@drawable/behance</item>
+        <item>@drawable/bingdic_android_activity</item>
         <item>@drawable/bubei_tingshu</item>
         <item>@drawable/cc_fotoplace_app</item>
         <item>@drawable/cc_huochaihe_app</item>
         <item>@drawable/cc_linkmob_chedan</item>
+        <item>@drawable/cc_netpas_android_firewall</item>
         <item>@drawable/cc_thedream_qinsmoon_mz</item>
         <item>@drawable/chinatelecom_mwallet</item>
         <item>@drawable/cld_navi_mainframe</item>
@@ -52,6 +54,7 @@
         <item>@drawable/cn_com_wo</item>
         <item>@drawable/cn_coupon_kfc</item>
         <item>@drawable/cn_damai</item>
+        <item>@drawable/cn_dict_android_pro</item>
         <item>@drawable/cn_dxy_android_aspirin</item>
         <item>@drawable/cn_dxy_medicinehelper</item>
         <item>@drawable/cn_eclicks_drivingtest</item>
@@ -236,6 +239,7 @@
         <item>@drawable/com_behance_behance</item>
         <item>@drawable/com_bf_sgs_hdexp</item>
         <item>@drawable/com_bie_game_pk_zsy</item>
+        <item>@drawable/com_bilibili_app_blue</item>
         <item>@drawable/com_bilin_huijiao_activity</item>
         <item>@drawable/com_bingbuqi</item>
         <item>@drawable/com_bjjpsk_jpskb</item>
@@ -254,6 +258,7 @@
         <item>@drawable/com_buykee_princessmakeup</item>
         <item>@drawable/com_by_butter_camera</item>
         <item>@drawable/com_bym_fontcon</item>
+        <item>@drawable/com_c2vl_kgamebox</item>
         <item>@drawable/com_cainiao_wireless</item>
         <item>@drawable/com_calendar_ui</item>
         <item>@drawable/com_candycrash_org</item>
@@ -268,6 +273,7 @@
         <item>@drawable/com_chanyouji_birth</item>
         <item>@drawable/com_chanyouji_pictorials</item>
         <item>@drawable/com_chaozh_ireaderfree</item>
+        <item>@drawable/com_chebada</item>
         <item>@drawable/com_chediandian_customer</item>
         <item>@drawable/com_chinaideal_bkclient_tabmain</item>
         <item>@drawable/com_chinamobile_cmccwifi</item>
@@ -329,6 +335,7 @@
         <item>@drawable/com_disney_troz</item>
         <item>@drawable/com_docin_zlibrary_ui_android</item>
         <item>@drawable/com_dongqiudi_news</item>
+        <item>@drawable/com_dotamax_app</item>
         <item>@drawable/com_douban_artist</item>
         <item>@drawable/com_douban_book_reader</item>
         <item>@drawable/com_douban_daily</item>
@@ -339,6 +346,7 @@
         <item>@drawable/com_douban_radio</item>
         <item>@drawable/com_douguo_recipe</item>
         <item>@drawable/com_dou_pai_doupai</item>
+        <item>@drawable/com_downloading_main_baiduyundownload</item>
         <item>@drawable/com_dp_android_elong</item>
         <item>@drawable/com_droidpiggy_weiqi</item>
         <item>@drawable/com_dropbox_android</item>
@@ -375,12 +383,14 @@
         <item>@drawable/com_estoty_game2048</item>
         <item>@drawable/com_estrongs_android_pop</item>
         <item>@drawable/com_esvideo</item>
+        <item>@drawable/com_eusoft_frhelper</item>
         <item>@drawable/com_everimaging_photoeffectstudio</item>
         <item>@drawable/com_evernote</item>
         <item>@drawable/com_evernote_ui_homeactivity</item>
         <item>@drawable/com_evy_guessword</item>
         <item>@drawable/com_example_businesshall</item>
         <item>@drawable/com_example_chinesechess</item>
+        <item>@drawable/com_excelliance_dualaid</item>
         <item>@drawable/com_ezjoynetwork_juicesplash</item>
         <item>@drawable/com_facebook_katana</item>
         <item>@drawable/com_facebook_orca</item>
@@ -487,6 +497,7 @@
         <item>@drawable/com_google_android_googlecamera</item>
         <item>@drawable/com_google_android_googlequicksearchbox</item>
         <item>@drawable/com_google_android_googlequicksearchbox_voicesearchactivity</item>
+        <item>@drawable/com_google_android_inputmethod_latin</item>
         <item>@drawable/com_google_android_inputmethod_pinyin</item>
         <item>@drawable/com_google_android_keep</item>
         <item>@drawable/com_google_android_launcher</item>
@@ -643,6 +654,7 @@
         <item>@drawable/com_kapp_ifont</item>
         <item>@drawable/com_kascend_chushou</item>
         <item>@drawable/com_kascend_video</item>
+        <item>@drawable/com_kdmfxsgg_novel</item>
         <item>@drawable/com_kekeclient</item>
         <item>@drawable/com_kenai_battery</item>
         <item>@drawable/com_kenai_dream</item>
@@ -688,6 +700,7 @@
         <item>@drawable/com_liangcang</item>
         <item>@drawable/com_lianliantech</item>
         <item>@drawable/com_lietou_mishu</item>
+        <item>@drawable/com_lightricks_facetune</item>
         <item>@drawable/com_linecorp_b612_android</item>
         <item>@drawable/com_linekong_cjad_mz</item>
         <item>@drawable/com_lingan_seeyou</item>
@@ -743,12 +756,17 @@
         <item>@drawable/com_mfw_voiceguide</item>
         <item>@drawable/com_microsoft_cortana</item>
         <item>@drawable/com_microsoft_office_excel</item>
+        <item>@drawable/com_microsoft_office_onenote</item>
+        <item>@drawable/com_microsoft_office_outlook</item>
         <item>@drawable/com_microsoft_office_powerpoint</item>
         <item>@drawable/com_microsoft_office_word</item>
         <item>@drawable/com_microsoft_skydrive</item>
         <item>@drawable/com_mi_global_shop</item>
         <item>@drawable/com_mihoyo_bh3_wdj</item>
+        <item>@drawable/com_mihoyo_enterprise_nghsod</item>
         <item>@drawable/com_mihoyo_hsodv22144</item>
+        <item>@drawable/com_mihoyo_hsodv22144_wdj</item>
+        <item>@drawable/com_mi_misupport</item>
         <item>@drawable/com_miniclip_plagueinc</item>
         <item>@drawable/com_mipay_wallet</item>
         <item>@drawable/com_mishi_android_mainapp</item>
@@ -771,10 +789,12 @@
         <item>@drawable/com_miui_miuibbs</item>
         <item>@drawable/com_miui_notes</item>
         <item>@drawable/com_miui_player</item>
+        <item>@drawable/com_miui_screenrecorder</item>
         <item>@drawable/com_miui_securitycenter</item>
         <item>@drawable/com_miui_securitycenter_mainactivity</item>
         <item>@drawable/com_miui_securitycenter_main</item>
         <item>@drawable/com_miui_supermarket</item>
+        <item>@drawable/com_miui_userbook</item>
         <item>@drawable/com_miui_video</item>
         <item>@drawable/com_miui_videoplayer</item>
         <item>@drawable/com_miui_virtualsim</item>
@@ -823,6 +843,7 @@
         <item>@drawable/com_nekki_shadowfight</item>
         <item>@drawable/com_nerser_ccser</item>
         <item>@drawable/com_netease_caipiao</item>
+        <item>@drawable/com_netease_cartoonreader</item>
         <item>@drawable/com_netease_cloudmusic</item>
         <item>@drawable/com_netease_dhxy_flyme</item>
         <item>@drawable/com_netease_edu_study</item>
@@ -896,7 +917,10 @@
         <item>@drawable/com_pinguo_edit_sdk</item>
         <item>@drawable/com_pinterest</item>
         <item>@drawable/com_pixlr_express</item>
+        <item>@drawable/com_playrix_township_chukong_mi</item>
+        <item>@drawable/com_playrix_township_chukong_wdj</item>
         <item>@drawable/com_pocket_cn</item>
+        <item>@drawable/com_podcast_podcasts</item>
         <item>@drawable/com_pokercity_bydrqp_mz</item>
         <item>@drawable/com_pokercity_yzddz</item>
         <item>@drawable/com_pomotodo</item>
@@ -934,6 +958,7 @@
         <item>@drawable/com_qq_reader</item>
         <item>@drawable/com_quan0_android</item>
         <item>@drawable/com_quanleimu_activity</item>
+        <item>@drawable/com_quark_browser</item>
         <item>@drawable/com_qufenqi_android_app</item>
         <item>@drawable/com_quickbird_speedtestmaster</item>
         <item>@drawable/com_quickoffice_android</item>
@@ -1037,12 +1062,14 @@
         <item>@drawable/com_sundaybugs_spring_free</item>
         <item>@drawable/com_suning_mobile_ebuy</item>
         <item>@drawable/com_suning_mobile_epa</item>
+        <item>@drawable/com_sunrise_scmbhc</item>
         <item>@drawable/com_supercell_boombeach_bd</item>
         <item>@drawable/com_supercell_boombeach_qihoo</item>
         <item>@drawable/com_supercell_boombeach_uc</item>
         <item>@drawable/com_supercell_clashofclans</item>
         <item>@drawable/com_supercell_clashofclans_uc</item>
         <item>@drawable/com_supercell_clashofclans_wdj</item>
+        <item>@drawable/com_supercell_clashroyale_uc</item>
         <item>@drawable/com_supercell_clashroyale_wdj</item>
         <item>@drawable/com_superlib</item>
         <item>@drawable/com_surfing_kefu</item>
@@ -1068,6 +1095,7 @@
         <item>@drawable/com_taobao_wifi</item>
         <item>@drawable/com_taojin_dungeon_mm_meizu</item>
         <item>@drawable/com_taou_maimai</item>
+        <item>@drawable/com_taptap</item>
         <item>@drawable/com_taptech_doufu</item>
         <item>@drawable/com_tc_cm</item>
         <item>@drawable/com_teambition_teambition</item>
@@ -1087,6 +1115,7 @@
         <item>@drawable/com_tencent_game_ssgame</item>
         <item>@drawable/com_tencent_game_vxdgame</item>
         <item>@drawable/com_tencent_karaoke</item>
+        <item>@drawable/com_tencent_lian</item>
         <item>@drawable/com_tencent_lightalk</item>
         <item>@drawable/com_tencent_loverzone</item>
         <item>@drawable/com_tencent_map</item>
@@ -1097,6 +1126,7 @@
         <item>@drawable/com_tencent_mobileqq</item>
         <item>@drawable/com_tencent_modoomarble</item>
         <item>@drawable/com_tencent_movieticket</item>
+        <item>@drawable/com_tencent_mtt_intl</item>
         <item>@drawable/com_tencent_mtt</item>
         <item>@drawable/com_tencent_news</item>
         <item>@drawable/com_tencent_pao</item>
@@ -1124,7 +1154,9 @@
         <item>@drawable/com_tencent_reading</item>
         <item>@drawable/com_tencent_research_drop</item>
         <item>@drawable/com_tencent_tgp</item>
+        <item>@drawable/com_tencent_tim</item>
         <item>@drawable/com_tencent_tmgp_bh3</item>
+        <item>@drawable/com_tencent_tmgp_carrot3</item>
         <item>@drawable/com_tencent_tmgp_cf</item>
         <item>@drawable/com_tencent_tmgp_dw_fs_yyb</item>
         <item>@drawable/com_tencent_tmgp_gods</item>
@@ -1152,6 +1184,7 @@
         <item>@drawable/com_thinkive_mobile_account_pa</item>
         <item>@drawable/com_tianmashikong_qmqj_mz</item>
         <item>@drawable/com_tianqi2345</item>
+        <item>@drawable/com_tiantianxcn_ttx</item>
         <item>@drawable/com_tieyou_train_ark</item>
         <item>@drawable/com_ting_mp3_android</item>
         <item>@drawable/com_tiqiaa_icontrol</item>
@@ -1215,10 +1248,12 @@
         <item>@drawable/com_wb_alert_sms_simple</item>
         <item>@drawable/com_webank_wemoney</item>
         <item>@drawable/com_weibo_freshcity</item>
+        <item>@drawable/com_weico_international</item>
         <item>@drawable/com_weihua_superphone</item>
         <item>@drawable/com_weipai_weipaipro</item>
         <item>@drawable/com_welove520_welove</item>
         <item>@drawable/com_wenba_bangbang</item>
+        <item>@drawable/com_wepie_snake</item>
         <item>@drawable/com_whatsapp</item>
         <item>@drawable/com_when_coco</item>
         <item>@drawable/com_wififreekey_wifi</item>
@@ -1227,6 +1262,7 @@
         <item>@drawable/com_wlanplus_chang</item>
         <item>@drawable/com_wochacha</item>
         <item>@drawable/com_wondertek_paper</item>
+        <item>@drawable/com_wordaily</item>
         <item>@drawable/com_worktile</item>
         <item>@drawable/com_wowotuan</item>
         <item>@drawable/com_wowsai_crafter4android</item>
@@ -1255,6 +1291,7 @@
         <item>@drawable/com_xiaoenai_appt</item>
         <item>@drawable/com_xiaoji</item>
         <item>@drawable/com_xiaomi_account</item>
+        <item>@drawable/com_xiaomi_antifake</item>
         <item>@drawable/com_xiaomi_bbs</item>
         <item>@drawable/com_xiaomi_channel</item>
         <item>@drawable/com_xiaomi_gamecenter</item>
@@ -1262,12 +1299,14 @@
         <item>@drawable/com_xiaomi_hm_health</item>
         <item>@drawable/com_xiaomi_jr</item>
         <item>@drawable/com_xiaomi_market</item>
+        <item>@drawable/com_xiaomi_mimobile</item>
         <item>@drawable/com_xiaomi_mitv_phone_tvassistant</item>
         <item>@drawable/com_xiaomi_o2o</item>
         <item>@drawable/com_xiaomi_padshop</item>
         <item>@drawable/com_xiaomi_payment</item>
         <item>@drawable/com_xiaomi_payment_milicenterentryactivity</item>
         <item>@drawable/com_xiaomi_router</item>
+        <item>@drawable/com_xiaomi_scanner</item>
         <item>@drawable/com_xiaomi_shop_activity_maintabactivity</item>
         <item>@drawable/com_xiaomi_shop</item>
         <item>@drawable/com_xiaomi_smarthome</item>
@@ -1295,6 +1334,7 @@
         <item>@drawable/com_xunlei_cloud</item>
         <item>@drawable/com_xunlei_downloadprovider</item>
         <item>@drawable/com_xunlei_kankan</item>
+        <item>@drawable/com_xwtec_sd_mobileclient</item>
         <item>@drawable/com_xxassistant</item>
         <item>@drawable/com_yahoo_mobile_client_android_flickr</item>
         <item>@drawable/com_yahoo_mobile_client_android_mail</item>
@@ -1311,6 +1351,7 @@
         <item>@drawable/com_yinhan_hunter_tx</item>
         <item>@drawable/com_yinyuetai_ui</item>
         <item>@drawable/com_yipiao</item>
+        <item>@drawable/com_yitong_mbank_psbc</item>
         <item>@drawable/com_yitu_youji</item>
         <item>@drawable/com_yiwang</item>
         <item>@drawable/com_yixia_videoeditor</item>
@@ -1368,11 +1409,13 @@
         <item>@drawable/com_zuibon_zuibangai</item>
         <item>@drawable/com_zuimeia_suite_lockscreen</item>
         <item>@drawable/com_zuimeia_suite_nicecountdown</item>
+        <item>@drawable/com_zuiqt_duotai</item>
         <item>@drawable/com_zuobao_xiaobao</item>
         <item>@drawable/com_zzenglish_client</item>
         <item>@drawable/co_runner_app</item>
         <item>@drawable/co_vine_android</item>
         <item>@drawable/ctrip_android_view</item>
+        <item>@drawable/de_danoeh_antennapod</item>
         <item>@drawable/deezer_android_app</item>
         <item>@drawable/de_robv_android_xposed_installer</item>
         <item>@drawable/dopool_player</item>
@@ -1393,9 +1436,11 @@
         <item>@drawable/jp_gocro_smartnews_android</item>
         <item>@drawable/jp_naver_line_android</item>
         <item>@drawable/jp_naver_linecamera_android</item>
+        <item>@drawable/jp_ne_kutu_panecal</item>
         <item>@drawable/jp_pxv_android</item>
         <item>@drawable/ly_pp_justpiano</item>
         <item>@drawable/main_fm_cs_en</item>
+        <item>@drawable/mark_via</item>
         <item>@drawable/mathieumaree_rippple</item>
         <item>@drawable/me_airtake</item>
         <item>@drawable/me_chunyu_chunyudoctor</item>
@@ -1413,6 +1458,7 @@
         <item>@drawable/net_iaround</item>
         <item>@drawable/net_luoo_luoofm</item>
         <item>@drawable/net_mobigame_zombietsunami</item>
+        <item>@drawable/oh_yeah_baiduyun</item>
         <item>@drawable/om_bluefir_grannyseason</item>
         <item>@drawable/om_gamedo_zombieterminator</item>
         <item>@drawable/oms_mmc_app_almanac_inland</item>
@@ -1486,10 +1532,12 @@
         <item>"app.android.ninestore"</item>
         <item>"au.com.shiftyjelly.pocketcasts"</item>
         <item>"Behance"</item>
+        <item>"bingdic.android.activity"</item>
         <item>"bubei.tingshu"</item>
         <item>"cc.fotoplace.app"</item>
         <item>"cc.huochaihe.app"</item>
         <item>"cc.linkmob.chedan"</item>
+        <item>"cc.netpas.android_firewall"</item>
         <item>"cc.thedream.qinsmoon.mz"</item>
         <item>"chinatelecom.mwallet"</item>
         <item>"cld.navi.mainframe"</item>
@@ -1517,6 +1565,7 @@
         <item>"cn.com.wo"</item>
         <item>"cn.coupon.kfc"</item>
         <item>"cn.damai"</item>
+        <item>"cn.dict.android.pro"</item>
         <item>"cn.dxy.android.aspirin"</item>
         <item>"cn.dxy.medicinehelper"</item>
         <item>"cn.eclicks.drivingtest"</item>
@@ -1701,6 +1750,7 @@
         <item>"com.behance.behance"</item>
         <item>"com.bf.sgs.hdexp"</item>
         <item>"com.bie.game.pk.zsy"</item>
+        <item>"com.bilibili.app.blue"</item>
         <item>"com.bilin.huijiao.activity"</item>
         <item>"com.bingbuqi"</item>
         <item>"com.bjjpsk.jpskb"</item>
@@ -1719,6 +1769,7 @@
         <item>"com.buykee.princessmakeup"</item>
         <item>"com.by.butter.camera"</item>
         <item>"com.bym.fontcon"</item>
+        <item>"com.c2vl.kgamebox"</item>
         <item>"com.cainiao.wireless"</item>
         <item>"com.calendar.UI"</item>
         <item>"com.CandyCrash.org"</item>
@@ -1733,6 +1784,7 @@
         <item>"com.chanyouji.birth"</item>
         <item>"com.chanyouji.pictorials"</item>
         <item>"com.chaozh.iReaderFree"</item>
+        <item>"com.chebada"</item>
         <item>"com.chediandian.customer"</item>
         <item>"com.chinaideal.bkclient.tabmain"</item>
         <item>"com.chinamobile.cmccwifi"</item>
@@ -1794,6 +1846,7 @@
         <item>"com.disney.troz"</item>
         <item>"com.docin.zlibrary.ui.android"</item>
         <item>"com.dongqiudi.news"</item>
+        <item>"com.dotamax.app"</item>
         <item>"com.douban.artist"</item>
         <item>"com.douban.book.reader"</item>
         <item>"com.douban.daily"</item>
@@ -1803,6 +1856,7 @@
         <item>"com.douban.movie"</item>
         <item>"com.douban.radio"</item>
         <item>"com.douguo.recipe"</item>
+        <item>"com.downloading.main.baiduyundownload"</item>
         <item>"com.dou_pai.DouPai"</item>
         <item>"com.dp.android.elong"</item>
         <item>"com.droidpiggy.weiqi"</item>
@@ -1840,12 +1894,14 @@
         <item>"com.estoty.game2048"</item>
         <item>"com.estrongs.android.pop"</item>
         <item>"com.esvideo"</item>
+        <item>"com.eusoft.frhelper"</item>
         <item>"com.everimaging.photoeffectstudio"</item>
         <item>"com.evernote"</item>
         <item>"com.evernote.ui.HomeActivity"</item>
         <item>"com.evy.guessword"</item>
         <item>"com.example.businesshall"</item>
         <item>"com.example.chinesechess"</item>
+        <item>"com.excelliance.dualaid"</item>
         <item>"com.ezjoynetwork.juicesplash"</item>
         <item>"com.facebook.katana"</item>
         <item>"com.facebook.orca"</item>
@@ -1952,6 +2008,7 @@
         <item>"com.google.android.GoogleCamera"</item>
         <item>"com.google.android.googlequicksearchbox"</item>
         <item>"com.google.android.googlequicksearchbox.VoiceSearchActivity"</item>
+        <item>"com.google.android.inputmethod.latin"</item>
         <item>"com.google.android.inputmethod.pinyin"</item>
         <item>"com.google.android.keep"</item>
         <item>"com.google.android.launcher"</item>
@@ -2108,6 +2165,7 @@
         <item>"com.kapp.ifont"</item>
         <item>"com.kascend.chushou"</item>
         <item>"com.kascend.video"</item>
+        <item>"com.kdmfxsgg.novel"</item>
         <item>"com.kekeclient"</item>
         <item>"com.kenai.battery"</item>
         <item>"com.kenai.dream"</item>
@@ -2153,6 +2211,7 @@
         <item>"com.liangcang"</item>
         <item>"com.lianliantech"</item>
         <item>"com.lietou.mishu"</item>
+        <item>"com.lightricks.facetune"</item>
         <item>"com.linecorp.b612.android"</item>
         <item>"com.linekong.cjad.mz"</item>
         <item>"com.lingan.seeyou"</item>
@@ -2208,12 +2267,17 @@
         <item>"com.mfw.voiceguide"</item>
         <item>"com.microsoft.cortana"</item>
         <item>"com.microsoft.office.excel"</item>
+        <item>"com.microsoft.office.onenote"</item>
+        <item>"com.microsoft.office.outlook"</item>
         <item>"com.microsoft.office.powerpoint"</item>
         <item>"com.microsoft.office.word"</item>
         <item>"com.microsoft.skydrive"</item>
         <item>"com.mi.global.shop"</item>
         <item>"com.miHoYo.bh3.wdj"</item>
+        <item>"com.miHoYo.enterprise.NGHSoD"</item>
         <item>"com.miHoYo.HSoDv22144"</item>
+        <item>"com.miHoYo.HSoDv22144.wdj"</item>
+        <item>"com.mi.misupport"</item>
         <item>"com.miniclip.plagueinc"</item>
         <item>"com.mipay.wallet"</item>
         <item>"com.mishi.android.mainapp"</item>
@@ -2236,10 +2300,12 @@
         <item>"com.miui.miuibbs"</item>
         <item>"com.miui.notes"</item>
         <item>"com.miui.player"</item>
+        <item>"com.miui.screenrecorder"</item>
         <item>"com.miui.securitycenter"</item>
         <item>"com.miui.securitycenter.MainActivity"</item>
         <item>"com.miui.securitycenter.Main"</item>
         <item>"com.miui.supermarket"</item>
+        <item>"com.miui.userbook"</item>
         <item>"com.miui.video"</item>
         <item>"com.miui.videoplayer"</item>
         <item>"com.miui.virtualsim"</item>
@@ -2288,6 +2354,7 @@
         <item>"com.nekki.shadowfight"</item>
         <item>"com.nerser.ccser"</item>
         <item>"com.netease.caipiao"</item>
+        <item>"com.netease.cartoonreader"</item>
         <item>"com.netease.cloudmusic"</item>
         <item>"com.netease.dhxy.flyme"</item>
         <item>"com.netease.edu.study"</item>
@@ -2361,7 +2428,10 @@
         <item>"com.pinguo.edit.sdk"</item>
         <item>"com.pinterest"</item>
         <item>"com.pixlr.express"</item>
+        <item>"com.playrix.township.chukong.mi"</item>
+        <item>"com.playrix.township.chukong.wdj"</item>
         <item>"com.pocket.cn"</item>
+        <item>"com.podcast.podcasts"</item>
         <item>"com.pokercity.bydrqp.mz"</item>
         <item>"com.pokercity.yzddz"</item>
         <item>"com.pomotodo"</item>
@@ -2399,6 +2469,7 @@
         <item>"com.qq.reader"</item>
         <item>"com.quan0.android"</item>
         <item>"com.quanleimu.activity"</item>
+        <item>"com.quark.browser"</item>
         <item>"com.qufenqi.android.app"</item>
         <item>"com.quickbird.speedtestmaster"</item>
         <item>"com.quickoffice.android"</item>
@@ -2502,12 +2573,14 @@
         <item>"com.sundaybugs.spring.free"</item>
         <item>"com.suning.mobile.ebuy"</item>
         <item>"com.suning.mobile.epa"</item>
+        <item>"com.sunrise.scmbhc"</item>
         <item>"com.supercell.boombeach.BD"</item>
         <item>"com.supercell.boombeach.qihoo"</item>
         <item>"com.supercell.boombeach.uc"</item>
         <item>"com.supercell.clashofclans"</item>
         <item>"com.supercell.clashofclans.uc"</item>
         <item>"com.supercell.clashofclans.wdj"</item>
+        <item>"com.supercell.clashroyale.uc"</item>
         <item>"com.supercell.clashroyale.wdj"</item>
         <item>"com.superlib"</item>
         <item>"com.surfing.kefu"</item>
@@ -2533,6 +2606,7 @@
         <item>"com.taobao.wifi"</item>
         <item>"com.taojin.dungeon.mm.meizu"</item>
         <item>"com.taou.maimai"</item>
+        <item>"com.taptap"</item>
         <item>"com.taptech.doufu"</item>
         <item>"com.tc.cm"</item>
         <item>"com.teambition.teambition"</item>
@@ -2552,6 +2626,7 @@
         <item>"com.tencent.game.SSGame"</item>
         <item>"com.tencent.game.VXDGame"</item>
         <item>"com.tencent.karaoke"</item>
+        <item>"com.tencent.lian"</item>
         <item>"com.tencent.lightalk"</item>
         <item>"com.tencent.loverzone"</item>
         <item>"com.tencent.map"</item>
@@ -2562,6 +2637,7 @@
         <item>"com.tencent.mobileqq"</item>
         <item>"com.tencent.modoomarble"</item>
         <item>"com.tencent.movieticket"</item>
+        <item>"com.tencent.mtt.intl"</item>
         <item>"com.tencent.mtt"</item>
         <item>"com.tencent.news"</item>
         <item>"com.tencent.pao"</item>
@@ -2589,7 +2665,9 @@
         <item>"com.tencent.reading"</item>
         <item>"com.tencent.research.drop"</item>
         <item>"com.tencent.tgp"</item>
+        <item>"com.tencent.tim"</item>
         <item>"com.tencent.tmgp.bh3"</item>
+        <item>"com.tencent.tmgp.carrot3"</item>
         <item>"com.tencent.tmgp.cf"</item>
         <item>"com.tencent.tmgp.dw.fs.yyb"</item>
         <item>"com.tencent.tmgp.gods"</item>
@@ -2617,6 +2695,7 @@
         <item>"com.thinkive.mobile.account_pa"</item>
         <item>"com.tianmashikong.qmqj.mz"</item>
         <item>"com.tianqi2345"</item>
+        <item>"com.tiantianxcn.ttx"</item>
         <item>"com.tieyou.train.ark"</item>
         <item>"com.ting.mp3.android"</item>
         <item>"com.tiqiaa.icontrol"</item>
@@ -2680,10 +2759,12 @@
         <item>"com.wb.alert.sms.simple"</item>
         <item>"com.webank.wemoney"</item>
         <item>"com.weibo.freshcity"</item>
+        <item>"com.weico.international"</item>
         <item>"com.weihua.superphone"</item>
         <item>"com.weipai.weipaipro"</item>
         <item>"com.welove520.welove"</item>
         <item>"com.wenba.bangbang"</item>
+        <item>"com.wepie.snake"</item>
         <item>"com.whatsapp"</item>
         <item>"com.when.coco"</item>
         <item>"com.wififreekey.wifi"</item>
@@ -2692,6 +2773,7 @@
         <item>"com.wlanplus.chang"</item>
         <item>"com.wochacha"</item>
         <item>"com.wondertek.paper"</item>
+        <item>"com_wordaily"</item>
         <item>"com.worktile"</item>
         <item>"com.wowotuan"</item>
         <item>"com.wowsai.crafter4Android"</item>
@@ -2720,6 +2802,7 @@
         <item>"com.xiaoenai.appt"</item>
         <item>"com.xiaoji"</item>
         <item>"com.xiaomi.account"</item>
+        <item>"com.xiaomi.antifake"</item>
         <item>"com.xiaomi.bbs"</item>
         <item>"com.xiaomi.channel"</item>
         <item>"com.xiaomi.gamecenter"</item>
@@ -2727,12 +2810,14 @@
         <item>"com.xiaomi.hm.health"</item>
         <item>"com.xiaomi.jr"</item>
         <item>"com.xiaomi.market"</item>
+        <item>"com.xiaomi.mimobile"</item>
         <item>"com.xiaomi.mitv.phone.tvassistant"</item>
         <item>"com.xiaomi.o2o"</item>
         <item>"com.xiaomi.padshop"</item>
         <item>"com.xiaomi.payment"</item>
         <item>"com.xiaomi.payment.MiliCenterEntryActivity"</item>
         <item>"com.xiaomi.router"</item>
+        <item>"com.xiaomi.scanner"</item>
         <item>"com.xiaomi.shop.activity.MainTabActivity"</item>
         <item>"com.xiaomi.shop"</item>
         <item>"com.xiaomi.smarthome"</item>
@@ -2760,6 +2845,7 @@
         <item>"com.xunlei.cloud"</item>
         <item>"com.xunlei.downloadprovider"</item>
         <item>"com.xunlei.kankan"</item>
+        <item>"com.xwtec.sd.mobileclient"</item>
         <item>"com.xxAssistant"</item>
         <item>"com.yahoo.mobile.client.android.flickr"</item>
         <item>"com.yahoo.mobile.client.android.mail"</item>
@@ -2776,6 +2862,7 @@
         <item>"com.yinhan.hunter.tx"</item>
         <item>"com.yinyuetai.ui"</item>
         <item>"com.yipiao"</item>
+        <item>"com.yitong.mbank.psbc"</item>
         <item>"com.yitu.youji"</item>
         <item>"com.yiwang"</item>
         <item>"com.yixia.videoeditor"</item>
@@ -2833,11 +2920,13 @@
         <item>"com.zuibon.zuibangai"</item>
         <item>"com.zuimeia.suite.lockscreen"</item>
         <item>"com.zuimeia.suite.nicecountdown"</item>
+        <item>"com.zuiqt.duotai"</item>
         <item>"com.zuobao.xiaobao"</item>
         <item>"com.zzenglish.client"</item>
         <item>"co.runner.app"</item>
         <item>"co.vine.android"</item>
         <item>"ctrip.android.view"</item>
+        <item>"de.danoeh.antennapod"</item>
         <item>"deezer.android.app"</item>
         <item>"de.robv.android.xposed.installer"</item>
         <item>"dopool.player"</item>
@@ -2858,9 +2947,11 @@
         <item>"jp.gocro.smartnews.android"</item>
         <item>"jp.naver.line.android"</item>
         <item>"jp.naver.linecamera.android"</item>
+        <item>"jp.ne.kutu.Panecal"</item>
         <item>"jp.pxv.android"</item>
         <item>"ly.pp.justpiano"</item>
         <item>"main.fm.cs.en"</item>
+        <item>"mark.via"</item>
         <item>"mathieumaree.rippple"</item>
         <item>"me.airtake"</item>
         <item>"me.chunyu.ChunyuDoctor"</item>
@@ -2878,6 +2969,7 @@
         <item>"net.iaround"</item>
         <item>"net.luoo.LuooFM"</item>
         <item>"net.mobigame.zombietsunami"</item>
+        <item>"oh.yeah.baiduyun"</item>
         <item>"om.bluefir.GrannySeason"</item>
         <item>"om.gamedo.ZombieTerminator"</item>
         <item>"oms.mmc.app.almanac_inland"</item>
