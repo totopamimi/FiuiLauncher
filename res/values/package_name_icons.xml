@@ -148,6 +148,7 @@
         <item>@drawable/com_android_contacts</item>
         <item>@drawable/com_android_dazhihui</item>
         <item>@drawable/com_android_deskclock</item>
+        <item>@drawable/com_android_dialer</item>
         <item>@drawable/com_android_email</item>
         <item>@drawable/com_androidesk</item>
         <item>@drawable/com_androidesk_livewallpaper</item>
@@ -1659,6 +1660,7 @@
         <item>"com.android.contacts"</item>
         <item>"com.android.dazhihui"</item>
         <item>"com.android.deskclock"</item>
+        <item>"com.android.dialer"</item>
         <item>"com.android.email"</item>
         <item>"com.androidesk"</item>
         <item>"com.androidesk.livewallpaper"</item>

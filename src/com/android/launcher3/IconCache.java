@@ -359,6 +359,7 @@ public class IconCache {
                     entry.icon = Utilities.createBadgedIconBitmap(fiuiIconPackageNameIds.
                             getDrawable(resPackageNameId), mContext);
                 }
+                fiuiIconPackageNameIds.recycle();
             }
 
             boolean fiuiIconClassNameEnabled = mContext.getResources().
@@ -380,6 +381,7 @@ public class IconCache {
                     entry.icon = Utilities.createBadgedIconBitmap(fiuiIconClassNameIds.
                             getDrawable(resClassNameId), mContext);
                 }
+                fiuiIconClassNameIds.recycle();
             }
         }
         return entry;

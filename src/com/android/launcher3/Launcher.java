@@ -17,6 +17,7 @@
 
 package com.android.launcher3;
 
+import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -66,6 +67,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
 import android.os.SystemClock;
+import android.support.annotation.NonNull;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -128,9 +130,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnNeverAskAgain;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.OnShowRationale;
+import permissions.dispatcher.PermissionRequest;
+import permissions.dispatcher.RuntimePermissions;
+
 /**
  * Default launcher application.
  */
+@RuntimePermissions
 public class Launcher extends Activity
         implements View.OnClickListener, OnLongClickListener, LauncherModel.Callbacks,
                    View.OnTouchListener, PageSwitchListener, LauncherProviderChangeListener {
@@ -376,6 +386,72 @@ public class Launcher extends Activity
 
     FocusIndicatorView mFocusHandler;
 
+    @NeedsPermission({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
+    void NeedsPermissionForStorage() {
+
+    }
+
+    @OnPermissionDenied({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
+    void OnPermissionDeniedForStorage() {
+
+    }
+
+    @OnNeverAskAgain({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
+    void OnNeverAskAgainForStorage() {
+
+    }
+
+    @OnShowRationale({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
+    void OnShowRationaleForStorage(final PermissionRequest request) {
+
+    }
+
+    @NeedsPermission({Manifest.permission.CALL_PHONE})
+    void NeedsPermissionForPhone() {
+
+    }
+
+    @OnPermissionDenied({Manifest.permission.CALL_PHONE})
+    void OnPermissionDeniedForPhone() {
+
+    }
+
+    @OnNeverAskAgain({Manifest.permission.CALL_PHONE})
+    void OnNeverAskAgainForPhone() {
+
+    }
+
+    @OnShowRationale({Manifest.permission.CALL_PHONE})
+    void OnShowRationaleForContact(final PermissionRequest request) {
+
+    }
+
+    @NeedsPermission({Manifest.permission.GET_ACCOUNTS})
+    void NeedsPermissionForContact() {
+
+    }
+
+    @OnPermissionDenied({Manifest.permission.GET_ACCOUNTS})
+    void OnPermissionDeniedForContact() {
+
+    }
+
+    @OnNeverAskAgain({Manifest.permission.GET_ACCOUNTS})
+    void OnNeverAskAgainForContact() {
+
+    }
+
+    @OnShowRationale({Manifest.permission.GET_ACCOUNTS})
+    void OnShowRationaleForPhone(final PermissionRequest request) {
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        LauncherPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (DEBUG_STRICT_MODE) {
@@ -398,6 +474,10 @@ public class Launcher extends Activity
         }
 
         super.onCreate(savedInstanceState);
+
+        LauncherPermissionsDispatcher.NeedsPermissionForStorageWithCheck(this);
+        LauncherPermissionsDispatcher.NeedsPermissionForPhoneWithCheck(this);
+        LauncherPermissionsDispatcher.NeedsPermissionForContactWithCheck(this);
 
         LauncherAppState.setApplicationContext(getApplicationContext());
         LauncherAppState app = LauncherAppState.getInstance();
