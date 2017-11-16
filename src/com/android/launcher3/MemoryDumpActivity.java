@@ -84,7 +84,7 @@ public class MemoryDumpActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MemoryDumpActivityPermissionsDispatcher.NeedsPermissionForStorageWithCheck(this);
+        MemoryDumpActivityPermissionsDispatcher.NeedsPermissionForStorageWithPermissionCheck(this);
     }
 
     public static String zipUp(ArrayList<String> paths) {

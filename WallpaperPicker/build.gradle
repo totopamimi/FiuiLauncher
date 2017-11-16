@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 
 android {
 
-    compileSdkVersion 26
-    buildToolsVersion '26.0.1'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.1'
 
 //    compileOptions {
 //        sourceCompatibility JavaVersion.VERSION_1_7
@@ -42,7 +42,7 @@ android {
             signingConfig signingConfigs.release
             minifyEnabled false
             zipAlignEnabled true
-            shrinkResources true
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -54,7 +54,7 @@ android {
 }
 
 ext {
-    GOOGLE_LIBS = "25.3.1"
+    GOOGLE_LIBS = "27.0.1"
 }
 
 dependencies {

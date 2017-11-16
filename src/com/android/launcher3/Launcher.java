@@ -475,9 +475,9 @@ public class Launcher extends Activity
 
         super.onCreate(savedInstanceState);
 
-        LauncherPermissionsDispatcher.NeedsPermissionForStorageWithCheck(this);
-        LauncherPermissionsDispatcher.NeedsPermissionForPhoneWithCheck(this);
-        LauncherPermissionsDispatcher.NeedsPermissionForContactWithCheck(this);
+        LauncherPermissionsDispatcher.NeedsPermissionForStorageWithPermissionCheck(this);
+        LauncherPermissionsDispatcher.NeedsPermissionForPhoneWithPermissionCheck(this);
+        LauncherPermissionsDispatcher.NeedsPermissionForContactWithPermissionCheck(this);
 
         LauncherAppState.setApplicationContext(getApplicationContext());
         LauncherAppState app = LauncherAppState.getInstance();
