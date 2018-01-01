@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 android {
 
     compileSdkVersion 27
-    buildToolsVersion '27.0.1'
+    buildToolsVersion '27.0.3'
 
 //    compileOptions {
 //        sourceCompatibility JavaVersion.VERSION_1_7
@@ -54,7 +54,7 @@ android {
 }
 
 ext {
-    GOOGLE_LIBS = "27.0.1"
+    GOOGLE_LIBS = "27.0.2"
 }
 
 dependencies {
