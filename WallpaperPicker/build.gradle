@@ -54,7 +54,7 @@ android {
 }
 
 ext {
-    GOOGLE_LIBS = "27.0.2"
+    GOOGLE_LIBS = "27.1.1"
 }
 
 dependencies {
