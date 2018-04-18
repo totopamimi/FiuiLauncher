@@ -58,5 +58,5 @@ ext {
 }
 
 dependencies {
-    compile "com.android.support:support-v4:$GOOGLE_LIBS"
+    implementation "com.android.support:support-v4:$GOOGLE_LIBS"
 }
